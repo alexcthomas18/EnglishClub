@@ -15,8 +15,18 @@
 4 verbose install     'lodash',
 4 verbose install     'ejs',
 4 verbose install     'mongoose',
+4 verbose install     'jsonwebtoken',
+4 verbose install     'express-jwt',
+4 verbose install     'passport',
+4 verbose install     'passport-local',
+4 verbose install     'passport-facebook',
+4 verbose install     'passport-twitter',
+4 verbose install     'passport-google-oauth',
 4 verbose install     'composable-middleware',
 4 verbose install     'connect-mongo',
+4 verbose install     'socket.io',
+4 verbose install     'socket.io-client',
+4 verbose install     'socketio-jwt',
 4 verbose install     'grunt',
 4 verbose install     'grunt-autoprefixer',
 4 verbose install     'grunt-wiredep',
@@ -46,6 +56,7 @@
 4 verbose install     'grunt-karma',
 4 verbose install     'grunt-build-control',
 4 verbose install     'grunt-mocha-test',
+4 verbose install     'grunt-contrib-sass',
 4 verbose install     'jit-grunt',
 4 verbose install     'time-grunt',
 4 verbose install     'grunt-express-server',
@@ -71,491 +82,653 @@
 4 verbose install     'should' ] ]
 5 verbose install where, peers [ '/Users/alexthomas/EnglishClub', [] ]
 6 info preinstall english-club@0.0.0
-7 verbose already installed skipping grunt-svgmin@~0.4.0 /Users/alexthomas/EnglishClub
-8 verbose already installed skipping grunt-usemin@~2.1.1 /Users/alexthomas/EnglishClub
-9 verbose already installed skipping grunt-env@~0.4.1 /Users/alexthomas/EnglishClub
-10 verbose already installed skipping grunt-node-inspector@~0.1.5 /Users/alexthomas/EnglishClub
-11 verbose already installed skipping grunt-nodemon@~0.2.0 /Users/alexthomas/EnglishClub
-12 verbose already installed skipping grunt-angular-templates@^0.5.4 /Users/alexthomas/EnglishClub
-13 verbose already installed skipping grunt-dom-munger@^3.4.0 /Users/alexthomas/EnglishClub
-14 verbose already installed skipping grunt-protractor-runner@^1.1.0 /Users/alexthomas/EnglishClub
-15 verbose already installed skipping grunt-asset-injector@^0.1.0 /Users/alexthomas/EnglishClub
-16 verbose already installed skipping grunt-karma@~0.8.2 /Users/alexthomas/EnglishClub
-17 silly cache add args [ 'grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control',
-17 silly cache add   null ]
-18 verbose cache add spec grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control
-19 verbose already installed skipping grunt-mocha-test@~0.10.2 /Users/alexthomas/EnglishClub
-20 verbose already installed skipping jit-grunt@^0.5.0 /Users/alexthomas/EnglishClub
-21 verbose already installed skipping time-grunt@~0.3.1 /Users/alexthomas/EnglishClub
-22 verbose already installed skipping grunt-express-server@~0.4.17 /Users/alexthomas/EnglishClub
-23 verbose already installed skipping grunt-open@~0.2.3 /Users/alexthomas/EnglishClub
-24 verbose already installed skipping open@~0.0.4 /Users/alexthomas/EnglishClub
-25 silly cache add parsed spec { raw: 'grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control',
+7 silly cache add args [ 'passport-twitter@latest', null ]
+8 verbose cache add spec passport-twitter@latest
+9 silly cache add args [ 'passport-google-oauth@latest', null ]
+10 verbose cache add spec passport-google-oauth@latest
+11 verbose already installed skipping composable-middleware@^0.3.0 /Users/alexthomas/EnglishClub
+12 verbose already installed skipping connect-mongo@^0.4.1 /Users/alexthomas/EnglishClub
+13 verbose already installed skipping socket.io@^1.0.6 /Users/alexthomas/EnglishClub
+14 verbose already installed skipping socket.io-client@^1.0.6 /Users/alexthomas/EnglishClub
+15 silly cache add parsed spec { raw: 'passport-twitter@latest',
+15 silly cache add   scope: null,
+15 silly cache add   name: 'passport-twitter',
+15 silly cache add   rawSpec: 'latest',
+15 silly cache add   spec: 'latest',
+15 silly cache add   type: 'tag' }
+16 verbose addNamed passport-twitter@latest
+17 silly addNamed semver.valid null
+18 silly addNamed semver.validRange null
+19 info addNameTag [ 'passport-twitter', 'latest' ]
+20 silly mapToRegistry name passport-twitter
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/passport-twitter
+24 verbose addNameTag registry:https://registry.npmjs.org/passport-twitter not in flight; fetching
+25 silly cache add parsed spec { raw: 'passport-google-oauth@latest',
 25 silly cache add   scope: null,
-25 silly cache add   name: 'grunt-build-control',
-25 silly cache add   rawSpec: 'git+https://github.com/DaftMonk/grunt-build-control',
-25 silly cache add   spec: 'https://github.com/DaftMonk/grunt-build-control',
-25 silly cache add   type: 'git' }
-26 verbose addRemoteGit u="https://github.com/DaftMonk/grunt-build-control" silent=false
-27 silly addRemoteGit normalized { url: 'https://github.com/DaftMonk/grunt-build-control',
-27 silly addRemoteGit   branch: 'master' }
-28 silly addRemoteGit v https-github-com-DaftMonk-grunt-build-control-7e4d577b
-29 verbose addRemoteGit /Users/alexthomas/.npm/_git-remotes/https-github-com-DaftMonk-grunt-build-control-7e4d577b not in flight; cloning
-30 verbose already installed skipping jshint-stylish@~0.1.5 /Users/alexthomas/EnglishClub
-31 verbose already installed skipping connect-livereload@~0.4.0 /Users/alexthomas/EnglishClub
-32 verbose already installed skipping karma-ng-scenario@~0.1.0 /Users/alexthomas/EnglishClub
-33 verbose already installed skipping karma-firefox-launcher@~0.1.3 /Users/alexthomas/EnglishClub
-34 verbose already installed skipping karma-script-launcher@~0.1.0 /Users/alexthomas/EnglishClub
-35 verbose already installed skipping karma-html2js-preprocessor@~0.1.0 /Users/alexthomas/EnglishClub
-36 info git [ 'config', '--get', 'remote.origin.url' ]
-37 verbose already installed skipping karma-ng-jade2js-preprocessor@^0.1.2 /Users/alexthomas/EnglishClub
-38 verbose already installed skipping karma-jasmine@~0.1.5 /Users/alexthomas/EnglishClub
-39 verbose already installed skipping karma-chrome-launcher@~0.1.3 /Users/alexthomas/EnglishClub
-40 verbose already installed skipping requirejs@~2.1.11 /Users/alexthomas/EnglishClub
-41 verbose already installed skipping karma-requirejs@~0.2.1 /Users/alexthomas/EnglishClub
-42 verbose already installed skipping karma-coffee-preprocessor@~0.2.1 /Users/alexthomas/EnglishClub
-43 verbose already installed skipping karma-jade-preprocessor@0.0.11 /Users/alexthomas/EnglishClub
-44 verbose already installed skipping karma-phantomjs-launcher@~0.1.4 /Users/alexthomas/EnglishClub
-45 verbose already installed skipping karma@~0.12.9 /Users/alexthomas/EnglishClub
-46 verbose already installed skipping karma-ng-html2js-preprocessor@~0.1.0 /Users/alexthomas/EnglishClub
-47 verbose already installed skipping supertest@~0.11.0 /Users/alexthomas/EnglishClub
-48 verbose already installed skipping should@~3.3.1 /Users/alexthomas/EnglishClub
-49 verbose already installed skipping express@~4.0.0 /Users/alexthomas/EnglishClub
-50 verbose already installed skipping morgan@~1.0.0 /Users/alexthomas/EnglishClub
-51 verbose already installed skipping body-parser@~1.5.0 /Users/alexthomas/EnglishClub
-52 verbose already installed skipping method-override@~1.0.0 /Users/alexthomas/EnglishClub
-53 verbose already installed skipping serve-favicon@~2.0.1 /Users/alexthomas/EnglishClub
-54 verbose already installed skipping cookie-parser@~1.0.1 /Users/alexthomas/EnglishClub
-55 verbose already installed skipping express-session@~1.0.2 /Users/alexthomas/EnglishClub
-56 verbose already installed skipping errorhandler@~1.0.0 /Users/alexthomas/EnglishClub
-57 verbose already installed skipping compression@~1.0.1 /Users/alexthomas/EnglishClub
-58 verbose already installed skipping lodash@~2.4.1 /Users/alexthomas/EnglishClub
-59 verbose already installed skipping ejs@~0.8.4 /Users/alexthomas/EnglishClub
-60 verbose already installed skipping mongoose@~3.8.8 /Users/alexthomas/EnglishClub
-61 verbose already installed skipping composable-middleware@^0.3.0 /Users/alexthomas/EnglishClub
-62 verbose already installed skipping connect-mongo@^0.4.1 /Users/alexthomas/EnglishClub
-63 verbose already installed skipping grunt@~0.4.4 /Users/alexthomas/EnglishClub
-64 verbose already installed skipping grunt-autoprefixer@~0.7.2 /Users/alexthomas/EnglishClub
-65 verbose already installed skipping grunt-wiredep@~1.8.0 /Users/alexthomas/EnglishClub
-66 verbose already installed skipping grunt-concurrent@~0.5.0 /Users/alexthomas/EnglishClub
-67 verbose already installed skipping grunt-contrib-clean@~0.5.0 /Users/alexthomas/EnglishClub
-68 verbose already installed skipping grunt-contrib-concat@~0.4.0 /Users/alexthomas/EnglishClub
-69 verbose already installed skipping grunt-contrib-copy@~0.5.0 /Users/alexthomas/EnglishClub
-70 verbose already installed skipping grunt-contrib-cssmin@~0.9.0 /Users/alexthomas/EnglishClub
-71 verbose already installed skipping grunt-contrib-htmlmin@~0.2.0 /Users/alexthomas/EnglishClub
-72 verbose already installed skipping grunt-contrib-imagemin@~0.7.1 /Users/alexthomas/EnglishClub
-73 verbose already installed skipping grunt-contrib-jshint@~0.10.0 /Users/alexthomas/EnglishClub
-74 verbose already installed skipping grunt-contrib-uglify@~0.4.0 /Users/alexthomas/EnglishClub
-75 verbose already installed skipping grunt-contrib-watch@~0.6.1 /Users/alexthomas/EnglishClub
-76 verbose already installed skipping grunt-google-cdn@~0.4.0 /Users/alexthomas/EnglishClub
-77 verbose already installed skipping grunt-newer@~0.7.0 /Users/alexthomas/EnglishClub
-78 verbose already installed skipping grunt-ng-annotate@^0.2.3 /Users/alexthomas/EnglishClub
-79 verbose already installed skipping grunt-rev@~0.1.0 /Users/alexthomas/EnglishClub
-80 verbose git remote.origin.url https://github.com/DaftMonk/grunt-build-control
-81 info git [ 'fetch', '-a', 'origin' ]
-82 verbose git fetch -a origin (https://github.com/DaftMonk/grunt-build-control)
-83 info git [ 'rev-list', '-n1', 'master' ]
-84 verbose git rev-list -n1 master 3d03ebbe49f8f963ef43c50af1084a15f56611fa
-85 verbose resolved git url git+https://github.com/DaftMonk/grunt-build-control#3d03ebbe49f8f963ef43c50af1084a15f56611fa
-86 info git [ 'clone',
-86 info git   '/Users/alexthomas/.npm/_git-remotes/https-github-com-DaftMonk-grunt-build-control-7e4d577b',
-86 info git   '/tmp/npm-1803-04fe39e9/git-cache-c0596477d991/3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
-87 verbose git clone from /Users/alexthomas/.npm/_git-remotes/https-github-com-DaftMonk-grunt-build-control-7e4d577b
-88 verbose git clone Cloning into '/tmp/npm-1803-04fe39e9/git-cache-c0596477d991/3d03ebbe49f8f963ef43c50af1084a15f56611fa'...
-88 verbose git clone done.
-89 info git [ 'checkout', '3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
-90 verbose git checkout Note: checking out '3d03ebbe49f8f963ef43c50af1084a15f56611fa'.
-90 verbose git checkout
-90 verbose git checkout You are in 'detached HEAD' state. You can look around, make experimental
-90 verbose git checkout changes and commit them, and you can discard any commits you make in this
-90 verbose git checkout state without impacting any branches by performing another checkout.
-90 verbose git checkout
-90 verbose git checkout If you want to create a new branch to retain commits you create, you may
-90 verbose git checkout do so (now or later) by using -b with the checkout command again. Example:
-90 verbose git checkout
-90 verbose git checkout   git checkout -b new_branch_name
-90 verbose git checkout
-90 verbose git checkout HEAD is now at 3d03ebb... Merge remote-tracking branch 'upstream/master'
-91 verbose addLocalDirectory /Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz not in flight; packing
-92 verbose tar pack [ '/Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz',
-92 verbose tar pack   '/tmp/npm-1803-04fe39e9/git-cache-c0596477d991/3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
-93 verbose tarball /Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz
-94 verbose folder /tmp/npm-1803-04fe39e9/git-cache-c0596477d991/3d03ebbe49f8f963ef43c50af1084a15f56611fa
-95 verbose addLocalTarball adding from inside cache /Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz
-96 silly cache afterAdd grunt-build-control@0.1.3
-97 verbose afterAdd /Users/alexthomas/.npm/grunt-build-control/0.1.3/package/package.json not in flight; writing
-98 verbose afterAdd /Users/alexthomas/.npm/grunt-build-control/0.1.3/package/package.json written
-99 silly install resolved [ { name: 'grunt-build-control',
-99 silly install resolved     description: 'Automate version control tasks for your project\'s built code. Keep built code in sync with source code, maintain multiple branches of built code, commit with automatic messages, and push to remote repositories.',
-99 silly install resolved     version: '0.1.3',
-99 silly install resolved     homepage: 'https://github.com/robwierzbowski/grunt-build-control',
-99 silly install resolved     author:
-99 silly install resolved      { name: 'Rob Wierzbowski',
-99 silly install resolved        email: 'hello@robwierzbowski.com',
-99 silly install resolved        url: 'http://robwierzbowski' },
-99 silly install resolved     repository:
-99 silly install resolved      { type: 'git',
-99 silly install resolved        url: 'git://github.com/robwierzbowski/grunt-build-control.git' },
-99 silly install resolved     bugs: { url: 'https://github.com/robwierzbowski/grunt-build-control/issues' },
-99 silly install resolved     licenses: [ [Object] ],
-99 silly install resolved     main: 'Gruntfile.js',
-99 silly install resolved     engines: { node: '>= 0.10.0' },
-99 silly install resolved     scripts: { test: 'grunt test' },
-99 silly install resolved     dependencies: { shelljs: '~0.2.6' },
-99 silly install resolved     devDependencies:
-99 silly install resolved      { 'grunt-contrib-jshint': '~0.1.1',
-99 silly install resolved        'grunt-contrib-clean': '~0.4.0',
-99 silly install resolved        'grunt-contrib-nodeunit': '~0.1.2',
-99 silly install resolved        grunt: '~0.4.1' },
-99 silly install resolved     peerDependencies: { grunt: '~0.4.1' },
-99 silly install resolved     keywords: [ 'gruntplugin' ],
-99 silly install resolved     gitHead: '3d03ebbe49f8f963ef43c50af1084a15f56611fa',
-99 silly install resolved     readme: '# grunt-build-control\n\n> Version control built code.\n\n### HELP WRITE TESTS FOR THIS TASK\n\nFor continued development, this library needs test coverage. If you like writing tests and like this Grunt task, please take a look at [issue #19](https://github.com/robwierzbowski/grunt-build-control/issues/19) and consider helping with a pull request. Any assistance is appreciated.\n\n## Getting started\n\nThis plugin requires [Grunt](http://gruntjs.com/) `~0.4.0` and [Git](http://git-scm.com/) `> 1.8`.\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide which explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with Grunt you can install the plugin with the command:\n\n```shell\nnpm install grunt-build-control --save-dev\n```\n\nAfter the plugin has been installed, load it in your Gruntfile with:\n\n```js\ngrunt.loadNpmTasks(\'grunt-build-control\');\n```\n\n## buildcontrol task\n\n_Run this task with the `grunt buildcontrol` command._\n\nAutomate version control tasks for your project\'s built code. \n\nKeep built code in sync with source code, maintain multiple branches of built code, commit with automatic messages, and push to remote repositories.\n\n### Setup\n\nYour project must have a compile or build process that outputs code to a subdirectory of the main project.\n\nAdd the build directory to the main project\'s .gitignore, and make sure the build process doesn\'t delete .git directories inside the build directory. If you\'re using a [Yeoman](http://yeoman.io) generator these steps are taken care of for you already.\n\n### Options\n\n#### dir\n\nType: `String`  \nDefault: `dist`  \n\nThe directory that contains your built code.\n\n#### branch\n\nType: `String`  \nDefault: `dist`  \n\nThe branch to commit to.\n\n#### remote\n\nType: `String`  \nDefault: `../`  \n\nThe remote to push to. Common examples include a distribution repository (Heroku or Scalr), your main project\'s remote (gh-pages branch on Github), or the local project repository itself (`../`).\n\n#### commit\n\nType: `Boolean`  \nDefault: `false`  \n\nCommits built code to `branch`. A new commit is only created if the built code has changed.\n\n#### tag\n\nType: `Boolean` or `String`  \nDefault: `false`  \n\nIf set to a string, adds its value as a lightweight git tag to the local built repo. Try loading your project\'s package.json as a variable and tagging with `pkg.version`.\n\n#### push\n\nType: `Boolean`  \nDefault: `false`  \n\nPushes `branch` to `remote`. If `tag` is set, pushes the specified tag as well.\n\n#### message\n\nType: `String`  \nDefault: `Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%  `\n\nThe commit message to use when committing. It must be a safe commit message for the command line, with special characters and double quotes escaped.\n\nYou can use the following tokens to print information about the main project:\n\n- `%sourceName%`: The main project\'s name, read from package.json or the project directory\n- `%sourceBranch%`: The main project\'s current branch\n- `%sourceCommit%`: The main project\'s most recent commit\n\n#### connectCommits\n\nType: `Boolean`  \nDefault: `true`  \n\nMake sure that every commit on the built code branch matches a commit on the main project branch. If the main project\'s working directory has uncommitted changes, a commit task will throw an error.\n\n### Usage\n\nA common use of grunt-build-control is to commit and push built code to the GitHub pages branch of the main repository, or to the master branch of a git-based deployment server like Heroku. \n\n```js\n// Project configuration.\nvar pkg = require(\'./package.json\');\n\ngrunt.initConfig({\n\n  // Various Grunt tasks...\n\n  buildcontrol: {\n    options: {\n      dir: \'dist\',\n      commit: true,\n      push: true,\n      message: \'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%\'\n    },\n    pages: {\n      options: {\n        remote: \'git@github.com:example_user/example_webapp.git\',\n        branch: \'gh-pages\'\n      }\n    },\n    heroku: {\n      options: {\n        remote: \'git@heroku.com:example-heroku-webapp-1988.git\',\n        branch: \'master\',\n        tag: pkg.version\n      }\n    },\n    local: {\n      options: {\n        remote: \'../\',\n        branch: \'build\'\n      }\n    }\n  }\n});\n\ngrunt.registerTask(\'build\', [\n  // Collection of tasks that build code to the \'dist\' directory...\n]);\n```\n\nIn this example a user is working on a Yeoman-based web app, with their project\'s source code hosted at `git@github.com:example_user/example_webapp.git`. To deploy they first run `grunt build` to build a minified, optimized version of their app into the \'dist\' directory. \n\nRunning `grunt buildcontrol:pages` commits the built code to the gh-pages branch of the \'dist/.git\' repository and pushes to the gh-pages branch of `git@github.com:example_user/example_webapp.git`. \n\nRunning `grunt buildcontrol:heroku` will commit the built code to the master branch of the \'dist/.git\' repository, tag the latest commit in \'dist/.git\' with the value of `pkg.version` if the tag doesn\'t already exist, and push refs and tags to the master branch of `git@heroku.com:example-heroku-webapp-1988.git`.\n\nRunning `grunt buildcontrol:local` will commit the built code to the build branch of the \'dist/.git\' repository and push to the build branch of the local source code repository. The local project repository can then be synced with a remote.\n\n#### Working with .gitignores\n\nYou may wish to commit files or directories that are ignored globally or in the source repository (e.g., bower_compontents), or make file inclusion and exclusion the responsibility of the build process alone.\n\nIn order to scope gitignore rules to the build directory only, create a file named \'gitignore\' in your source directory: \n\n```shell\n# Unignore everything\n!**/*\n\n# Re-ignore things\n...your ignore rules here\n```\n\nThen copy it to the build directory during your build process as \'.gitignore\'.\n\n#### Notes\n\nGrunt-build-control deploys to git endpoints. If you want to deploy to a private server [this tutorial by @curtisblackwell ](http://curtisblackwell.com/blog/my-deploy-method-brings-most-of-the-boys-to-the-yard) is a good place to start.\n\n`buildcontrol` will add commits on top of the existing history of the remote branch if available.\n\n`buildcontrol` is a synchronous task, and fetches from your remote before each commit or push. Depending on the location of your remote, the size of commits, and network speed it can be a long running task.\n\nIt\'s best to run `buildcontrol` manually after your build process or as the last step in a build and deploy task.\n\nIf a git conflict occurs (usually because another user has force-pushed to the deployment server) delete the built code directory and run build and build control again.\n\nDon\'t check out built code branches while in the main project directory. Differences in untracked files will cause issues.\n\n<!-- \n## Todo:\n\n- replace as many porcelain commands as possible with plumbing.\n- describe or list similar projects with limitations?  \n  https://npmjs.org/package/grunt-github-pages  \n  https://npmjs.org/package/grunt-git-dist  \n  https://npmjs.org/package/grunt-git-selective-deploy  \n\n-->\n \n## Contribute\n\nPost bugs and feature requests to the [Github issue tracker](https://github.com/robwierzbowski/grunt-build-control/issues). In lieu of a formal styleguide, take care to maintain the existing coding style. Lint and test your code using [Grunt](https://github.com/gruntjs/grunt).\n\n## Release History\n\n- 2013-11-29 v0.1.2: Add defaults for all properties.\n- 2013-10-19 v0.1.1: Stable initial release.\n\n## License\n\n[MIT](http://en.wikipedia.org/wiki/MIT_License)\n\n\n\n[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/robwierzbowski/grunt-build-control/trend.png)](https://bitdeli.com/free "Bitdeli Badge")\n\n',
-99 silly install resolved     readmeFilename: 'README.md',
-99 silly install resolved     _id: 'grunt-build-control@0.1.3',
-99 silly install resolved     _shasum: '209cd3620acae512993ad88c5ae72fdf55108f9c',
-99 silly install resolved     _from: '../../../tmp/npm-1803-04fe39e9/git-cache-c0596477d991/3d03ebbe49f8f963ef43c50af1084a15f56611fa',
-99 silly install resolved     _resolved: 'git+https://github.com/DaftMonk/grunt-build-control#3d03ebbe49f8f963ef43c50af1084a15f56611fa' } ]
-100 info install grunt-build-control@0.1.3 into /Users/alexthomas/EnglishClub
-101 info installOne grunt-build-control@0.1.3
-102 verbose installOne of grunt-build-control to /Users/alexthomas/EnglishClub not in flight; installing
-103 verbose lock using /Users/alexthomas/.npm/_locks/grunt-build-control-91f91a806cff6a0d.lock for /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-104 silly install write writing grunt-build-control 0.1.3 to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-105 silly cache addNamed cb grunt-build-control@0.1.3
-106 verbose unbuild node_modules/grunt-build-control
-107 info preuninstall grunt-build-control@0.1.3
-108 info uninstall grunt-build-control@0.1.3
-109 verbose unbuild rmStuff grunt-build-control@0.1.3 from /Users/alexthomas/EnglishClub/node_modules
-110 info postuninstall grunt-build-control@0.1.3
-111 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-112 silly gentlyRm purging /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-113 silly gentlyRm quitting because other entries in /Users/alexthomas/EnglishClub/node_modules
-114 verbose tar unpack /Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz
-115 verbose tar unpacking to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-116 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-117 silly gunzTarPerm modes [ '755', '644' ]
-118 silly gunzTarPerm extractEntry package.json
-119 silly gunzTarPerm extractEntry .npmignore
-120 silly gunzTarPerm extractEntry README.md
-121 silly gunzTarPerm extractEntry LICENSE
-122 silly gunzTarPerm extractEntry Gruntfile.js
-123 silly gunzTarPerm extractEntry .jshintrc
-124 silly gunzTarPerm extractEntry tasks/build_control.js
-125 silly gunzTarPerm extractEntry test/build_control_test.js
-126 silly gunzTarPerm extractEntry test/expected/custom_options
-127 silly gunzTarPerm extractEntry test/expected/default_options
-128 silly gunzTarPerm extractEntry test/fixtures/123
-129 silly gunzTarPerm extractEntry test/fixtures/testing
-130 info preinstall grunt-build-control@0.1.3
-131 silly prepareForInstallMany adding shelljs@~0.2.6 from grunt-build-control dependencies
-132 silly cache add args [ 'shelljs@~0.2.6', null ]
-133 verbose cache add spec shelljs@~0.2.6
-134 silly cache add parsed spec { raw: 'shelljs@~0.2.6',
-134 silly cache add   scope: null,
-134 silly cache add   name: 'shelljs',
-134 silly cache add   rawSpec: '~0.2.6',
-134 silly cache add   spec: '>=0.2.6 <0.3.0',
-134 silly cache add   type: 'range' }
-135 verbose addNamed shelljs@>=0.2.6 <0.3.0
-136 silly addNamed semver.valid null
-137 silly addNamed semver.validRange >=0.2.6 <0.3.0
-138 silly addNameRange { name: 'shelljs', range: '>=0.2.6 <0.3.0', hasData: false }
-139 silly mapToRegistry name shelljs
-140 silly mapToRegistry using default registry
-141 silly mapToRegistry registry https://registry.npmjs.org/
-142 silly mapToRegistry uri https://registry.npmjs.org/shelljs
-143 verbose addNameRange registry:https://registry.npmjs.org/shelljs not in flight; fetching
-144 verbose request uri https://registry.npmjs.org/shelljs
-145 verbose request no auth needed
-146 info attempt registry request try #1 at 11:50:27 AM
-147 verbose request id 7bc37f50f280aaee
-148 verbose etag "2FHKL7WZEJD7D1XJJ26XEHV2N"
-149 http request GET https://registry.npmjs.org/shelljs
-150 http 304 https://registry.npmjs.org/shelljs
-151 silly get cb [ 304,
-151 silly get   { date: 'Sun, 22 Mar 2015 17:50:27 GMT',
-151 silly get     server: 'Apache',
-151 silly get     via: '1.1 varnish',
-151 silly get     'last-modified': 'Sun, 22 Mar 2015 17:50:27 GMT',
-151 silly get     'cache-control': 'max-age=60',
-151 silly get     etag: '"2FHKL7WZEJD7D1XJJ26XEHV2N"',
-151 silly get     age: '27',
-151 silly get     'x-served-by': 'cache-sjc3124-SJC',
-151 silly get     'x-cache': 'HIT',
-151 silly get     'x-cache-hits': '1',
-151 silly get     'x-timer': 'S1427046627.454731,VS0,VE0',
-151 silly get     vary: 'Accept',
-151 silly get     'content-length': '0',
-151 silly get     'keep-alive': 'timeout=10, max=50',
-151 silly get     connection: 'Keep-Alive' } ]
-152 verbose etag https://registry.npmjs.org/shelljs from cache
-153 verbose get saving shelljs to /Users/alexthomas/.npm/registry.npmjs.org/shelljs/.cache.json
-154 silly addNameRange number 2 { name: 'shelljs', range: '>=0.2.6 <0.3.0', hasData: true }
-155 silly addNameRange versions [ 'shelljs',
-155 silly addNameRange   [ '0.0.1',
-155 silly addNameRange     '0.0.2',
-155 silly addNameRange     '0.0.3',
-155 silly addNameRange     '0.0.4',
-155 silly addNameRange     '0.0.5',
-155 silly addNameRange     '0.0.6',
-155 silly addNameRange     '0.0.7',
-155 silly addNameRange     '0.0.8',
-155 silly addNameRange     '0.0.9',
-155 silly addNameRange     '0.1.0',
-155 silly addNameRange     '0.1.1',
-155 silly addNameRange     '0.1.2',
-155 silly addNameRange     '0.1.3',
-155 silly addNameRange     '0.1.4',
-155 silly addNameRange     '0.2.0',
-155 silly addNameRange     '0.2.1',
-155 silly addNameRange     '0.2.2',
-155 silly addNameRange     '0.2.3',
-155 silly addNameRange     '0.2.4',
-155 silly addNameRange     '0.2.5',
-155 silly addNameRange     '0.2.6',
-155 silly addNameRange     '0.3.0',
-155 silly addNameRange     '0.4.0',
-155 silly addNameRange     '0.0.1-alpha1',
-155 silly addNameRange     '0.0.2-pre1',
-155 silly addNameRange     '0.0.4-pre1',
-155 silly addNameRange     '0.0.5-pre1',
-155 silly addNameRange     '0.0.5-pre2',
-155 silly addNameRange     '0.0.5-pre3',
-155 silly addNameRange     '0.0.5-pre4',
-155 silly addNameRange     '0.0.6-pre1',
-155 silly addNameRange     '0.0.6-pre2' ] ]
-156 verbose addNamed shelljs@0.2.6
-157 silly addNamed semver.valid 0.2.6
-158 silly addNamed semver.validRange 0.2.6
-159 silly cache afterAdd shelljs@0.2.6
-160 verbose afterAdd /Users/alexthomas/.npm/shelljs/0.2.6/package/package.json not in flight; writing
-161 verbose afterAdd /Users/alexthomas/.npm/shelljs/0.2.6/package/package.json written
-162 silly install resolved [ { name: 'shelljs',
-162 silly install resolved     version: '0.2.6',
-162 silly install resolved     author: { name: 'Artur Adib', email: 'aadib@mozilla.com' },
-162 silly install resolved     description: 'Portable Unix shell commands for Node.js',
-162 silly install resolved     keywords: [ 'unix', 'shell', 'makefile', 'make', 'jake', 'synchronous' ],
-162 silly install resolved     repository: { type: 'git', url: 'git://github.com/arturadib/shelljs.git' },
-162 silly install resolved     homepage: 'http://github.com/arturadib/shelljs',
-162 silly install resolved     main: './shell.js',
-162 silly install resolved     scripts: { test: 'node scripts/run-tests' },
-162 silly install resolved     bin: { shjs: './bin/shjs' },
-162 silly install resolved     dependencies: {},
-162 silly install resolved     devDependencies: { jshint: '~2.1.11' },
-162 silly install resolved     optionalDependencies: {},
-162 silly install resolved     engines: { node: '>=0.8.0' },
-162 silly install resolved     bugs: { url: 'https://github.com/arturadib/shelljs/issues' },
-162 silly install resolved     _id: 'shelljs@0.2.6',
-162 silly install resolved     dist:
-162 silly install resolved      { shasum: '90492d72ffcc8159976baba62fb0f6884f0c3378',
-162 silly install resolved        tarball: 'http://registry.npmjs.org/shelljs/-/shelljs-0.2.6.tgz' },
-162 silly install resolved     _from: 'shelljs@>=0.2.6 <0.3.0',
-162 silly install resolved     _npmVersion: '1.3.8',
-162 silly install resolved     _npmUser: { name: 'artur', email: 'arturadib@gmail.com' },
-162 silly install resolved     maintainers: [ [Object] ],
-162 silly install resolved     directories: {},
-162 silly install resolved     _shasum: '90492d72ffcc8159976baba62fb0f6884f0c3378',
-162 silly install resolved     _resolved: 'https://registry.npmjs.org/shelljs/-/shelljs-0.2.6.tgz',
-162 silly install resolved     readme: 'ERROR: No README data found!' } ]
-163 info install shelljs@0.2.6 into /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-164 info installOne shelljs@0.2.6
-165 verbose installOne of shelljs to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control not in flight; installing
-166 verbose lock using /Users/alexthomas/.npm/_locks/shelljs-bc2f6cc168bad2cc.lock for /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
-167 silly install write writing shelljs 0.2.6 to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
-168 silly cache addNamed cb shelljs@0.2.6
-169 verbose unbuild node_modules/grunt-build-control/node_modules/shelljs
-170 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
-171 verbose tar unpack /Users/alexthomas/.npm/shelljs/0.2.6/package.tgz
-172 verbose tar unpacking to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
-173 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
-174 silly gunzTarPerm modes [ '755', '644' ]
-175 silly gunzTarPerm extractEntry package.json
-176 silly gunzTarPerm extractEntry .npmignore
-177 silly gunzTarPerm extractEntry README.md
-178 silly gunzTarPerm extractEntry LICENSE
-179 silly gunzTarPerm extractEntry global.js
-180 silly gunzTarPerm extractEntry make.js
-181 silly gunzTarPerm extractEntry shell.js
-182 silly gunzTarPerm extractEntry bin/shjs
-183 silly gunzTarPerm extractEntry .travis.yml
-184 silly gunzTarPerm extractEntry .jshintrc
-185 silly gunzTarPerm extractEntry scripts/generate-docs.js
-186 silly gunzTarPerm extractEntry scripts/run-tests.js
-187 silly gunzTarPerm extractEntry .documentup.json
-188 silly gunzTarPerm extractEntry src/cat.js
-189 silly gunzTarPerm extractEntry src/exec.js
-190 silly gunzTarPerm extractEntry src/find.js
-191 silly gunzTarPerm extractEntry src/grep.js
-192 silly gunzTarPerm extractEntry src/ls.js
-193 silly gunzTarPerm extractEntry src/error.js
-194 silly gunzTarPerm extractEntry src/mv.js
-195 silly gunzTarPerm extractEntry src/popd.js
-196 silly gunzTarPerm extractEntry src/pushd.js
-197 silly gunzTarPerm extractEntry src/pwd.js
-198 silly gunzTarPerm extractEntry src/rm.js
-199 silly gunzTarPerm extractEntry src/echo.js
-200 silly gunzTarPerm extractEntry src/sed.js
-201 silly gunzTarPerm extractEntry src/dirs.js
-202 silly gunzTarPerm extractEntry src/tempdir.js
-203 silly gunzTarPerm extractEntry src/cp.js
-204 silly gunzTarPerm extractEntry src/test.js
-205 silly gunzTarPerm extractEntry src/common.js
-206 silly gunzTarPerm extractEntry src/to.js
-207 silly gunzTarPerm extractEntry src/chmod.js
-208 silly gunzTarPerm extractEntry src/toEnd.js
-209 silly gunzTarPerm extractEntry src/cd.js
-210 silly gunzTarPerm extractEntry src/which.js
-211 silly gunzTarPerm extractEntry src/mkdir.js
-212 info preinstall shelljs@0.2.6
-213 silly install resolved []
-214 verbose about to build /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
-215 info build /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
-216 verbose linkStuff [ false,
-216 verbose linkStuff   false,
-216 verbose linkStuff   false,
-216 verbose linkStuff   '/Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules' ]
-217 info linkStuff shelljs@0.2.6
-218 verbose linkBins shelljs@0.2.6
-219 verbose link bins [ { shjs: './bin/shjs' },
-219 verbose link bins   '/Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/.bin',
-219 verbose link bins   false ]
-220 verbose linkMans shelljs@0.2.6
-221 verbose rebuildBundles shelljs@0.2.6
-222 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/.bin/shjs
-223 info install shelljs@0.2.6
-224 info postinstall shelljs@0.2.6
-225 verbose unlock done using /Users/alexthomas/.npm/_locks/shelljs-bc2f6cc168bad2cc.lock for /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
-226 verbose about to build /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-227 info build /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-228 verbose linkStuff [ false,
-228 verbose linkStuff   false,
-228 verbose linkStuff   false,
-228 verbose linkStuff   '/Users/alexthomas/EnglishClub/node_modules' ]
-229 info linkStuff grunt-build-control@0.1.3
-230 verbose linkBins grunt-build-control@0.1.3
-231 verbose linkMans grunt-build-control@0.1.3
-232 verbose rebuildBundles grunt-build-control@0.1.3
-233 verbose rebuildBundles [ '.bin', 'shelljs' ]
-234 info install grunt-build-control@0.1.3
-235 info postinstall grunt-build-control@0.1.3
-236 verbose unlock done using /Users/alexthomas/.npm/_locks/grunt-build-control-91f91a806cff6a0d.lock for /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
-237 info build /Users/alexthomas/EnglishClub
-238 verbose linkStuff [ false, false, false, '/Users/alexthomas' ]
-239 info linkStuff english-club@0.0.0
-240 verbose linkBins english-club@0.0.0
-241 verbose linkMans english-club@0.0.0
-242 verbose rebuildBundles english-club@0.0.0
-243 verbose rebuildBundles [ '.bin',
-243 verbose rebuildBundles   'body-parser',
-243 verbose rebuildBundles   'composable-middleware',
-243 verbose rebuildBundles   'compression',
-243 verbose rebuildBundles   'connect-livereload',
-243 verbose rebuildBundles   'connect-mongo',
-243 verbose rebuildBundles   'cookie-parser',
-243 verbose rebuildBundles   'ejs',
-243 verbose rebuildBundles   'errorhandler',
-243 verbose rebuildBundles   'express',
-243 verbose rebuildBundles   'express-session',
-243 verbose rebuildBundles   'grunt',
-243 verbose rebuildBundles   'grunt-angular-templates',
-243 verbose rebuildBundles   'grunt-asset-injector',
-243 verbose rebuildBundles   'grunt-autoprefixer',
-243 verbose rebuildBundles   'grunt-build-control',
-243 verbose rebuildBundles   'grunt-concurrent',
-243 verbose rebuildBundles   'grunt-contrib-clean',
-243 verbose rebuildBundles   'grunt-contrib-concat',
-243 verbose rebuildBundles   'grunt-contrib-copy',
-243 verbose rebuildBundles   'grunt-contrib-cssmin',
-243 verbose rebuildBundles   'grunt-contrib-htmlmin',
-243 verbose rebuildBundles   'grunt-contrib-imagemin',
-243 verbose rebuildBundles   'grunt-contrib-jshint',
-243 verbose rebuildBundles   'grunt-contrib-uglify',
-243 verbose rebuildBundles   'grunt-contrib-watch',
-243 verbose rebuildBundles   'grunt-dom-munger',
-243 verbose rebuildBundles   'grunt-env',
-243 verbose rebuildBundles   'grunt-express-server',
-243 verbose rebuildBundles   'grunt-google-cdn',
-243 verbose rebuildBundles   'grunt-karma',
-243 verbose rebuildBundles   'grunt-mocha-test',
-243 verbose rebuildBundles   'grunt-newer',
-243 verbose rebuildBundles   'grunt-ng-annotate',
-243 verbose rebuildBundles   'grunt-node-inspector',
-243 verbose rebuildBundles   'grunt-nodemon',
-243 verbose rebuildBundles   'grunt-open',
-243 verbose rebuildBundles   'grunt-protractor-runner',
-243 verbose rebuildBundles   'grunt-rev',
-243 verbose rebuildBundles   'grunt-svgmin',
-243 verbose rebuildBundles   'grunt-usemin',
-243 verbose rebuildBundles   'grunt-wiredep',
-243 verbose rebuildBundles   'jit-grunt',
-243 verbose rebuildBundles   'jshint-stylish',
-243 verbose rebuildBundles   'karma',
-243 verbose rebuildBundles   'karma-chrome-launcher',
-243 verbose rebuildBundles   'karma-coffee-preprocessor',
-243 verbose rebuildBundles   'karma-firefox-launcher',
-243 verbose rebuildBundles   'karma-html2js-preprocessor',
-243 verbose rebuildBundles   'karma-jade-preprocessor',
-243 verbose rebuildBundles   'karma-jasmine',
-243 verbose rebuildBundles   'karma-ng-html2js-preprocessor',
-243 verbose rebuildBundles   'karma-ng-jade2js-preprocessor',
-243 verbose rebuildBundles   'karma-ng-scenario',
-243 verbose rebuildBundles   'karma-phantomjs-launcher',
-243 verbose rebuildBundles   'karma-requirejs',
-243 verbose rebuildBundles   'karma-script-launcher',
-243 verbose rebuildBundles   'lodash',
-243 verbose rebuildBundles   'method-override',
-243 verbose rebuildBundles   'mongoose',
-243 verbose rebuildBundles   'morgan',
-243 verbose rebuildBundles   'open',
-243 verbose rebuildBundles   'requirejs',
-243 verbose rebuildBundles   'serve-favicon',
-243 verbose rebuildBundles   'should',
-243 verbose rebuildBundles   'supertest',
-243 verbose rebuildBundles   'time-grunt',
-243 verbose rebuildBundles   'yo' ]
-244 verbose rebuild bundle /Users/alexthomas/EnglishClub/node_modules/yo
-245 info build /Users/alexthomas/EnglishClub/node_modules/yo
-246 info preinstall yo@1.4.6
-247 verbose linkStuff [ false,
-247 verbose linkStuff   false,
-247 verbose linkStuff   false,
-247 verbose linkStuff   '/Users/alexthomas/EnglishClub/node_modules' ]
-248 info linkStuff yo@1.4.6
-249 warn prefer global yo@1.4.6 should be installed with -g
-250 verbose linkBins yo@1.4.6
-251 verbose link bins [ { yo: 'lib/cli.js' },
-251 verbose link bins   '/Users/alexthomas/EnglishClub/node_modules/.bin',
-251 verbose link bins   false ]
-252 verbose linkMans yo@1.4.6
-253 verbose rebuildBundles yo@1.4.6
-254 verbose rebuildBundles [ 'inquirer',
-254 verbose rebuildBundles   'insight',
-254 verbose rebuildBundles   'lodash',
-254 verbose rebuildBundles   'meow',
-254 verbose rebuildBundles   'npm-keyword',
-254 verbose rebuildBundles   'opn',
-254 verbose rebuildBundles   'package-json',
-254 verbose rebuildBundles   'root-check',
-254 verbose rebuildBundles   'sort-on',
-254 verbose rebuildBundles   'string-length',
-254 verbose rebuildBundles   'titleize',
-254 verbose rebuildBundles   'update-notifier',
-254 verbose rebuildBundles   'user-home',
-254 verbose rebuildBundles   'yeoman-character',
-254 verbose rebuildBundles   'yeoman-doctor',
-254 verbose rebuildBundles   'yeoman-environment',
-254 verbose rebuildBundles   'yosay' ]
-255 verbose stack Error: ENOENT, chmod '/Users/alexthomas/EnglishClub/node_modules/yo/lib/cli.js'
-255 verbose stack     at Error (native)
-256 verbose cwd /Users/alexthomas/EnglishClub
-257 error Darwin 14.1.0
-258 error argv "node" "/usr/local/bin/npm" "install"
-259 error node v0.12.0
-260 error npm  v2.5.1
-261 error path /Users/alexthomas/EnglishClub/node_modules/yo/lib/cli.js
-262 error code ENOENT
-263 error errno -2
-264 error enoent ENOENT, chmod '/Users/alexthomas/EnglishClub/node_modules/yo/lib/cli.js'
-264 error enoent This is most likely not a problem with npm itself
-264 error enoent and is related to npm not being able to find a file.
-265 verbose exit [ -2, true ]
+25 silly cache add   name: 'passport-google-oauth',
+25 silly cache add   rawSpec: 'latest',
+25 silly cache add   spec: 'latest',
+25 silly cache add   type: 'tag' }
+26 verbose addNamed passport-google-oauth@latest
+27 silly addNamed semver.valid null
+28 silly addNamed semver.validRange null
+29 info addNameTag [ 'passport-google-oauth', 'latest' ]
+30 silly mapToRegistry name passport-google-oauth
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/passport-google-oauth
+34 verbose addNameTag registry:https://registry.npmjs.org/passport-google-oauth not in flight; fetching
+35 verbose already installed skipping socketio-jwt@^2.0.2 /Users/alexthomas/EnglishClub
+36 verbose already installed skipping grunt@~0.4.4 /Users/alexthomas/EnglishClub
+37 verbose already installed skipping grunt-autoprefixer@~0.7.2 /Users/alexthomas/EnglishClub
+38 verbose already installed skipping grunt-wiredep@~1.8.0 /Users/alexthomas/EnglishClub
+39 verbose already installed skipping grunt-concurrent@~0.5.0 /Users/alexthomas/EnglishClub
+40 verbose already installed skipping grunt-contrib-clean@~0.5.0 /Users/alexthomas/EnglishClub
+41 verbose already installed skipping grunt-contrib-concat@~0.4.0 /Users/alexthomas/EnglishClub
+42 verbose request uri https://registry.npmjs.org/passport-twitter
+43 verbose request no auth needed
+44 info attempt registry request try #1 at 10:21:28 AM
+45 verbose request id 982ef582b2b7c89f
+46 verbose etag "3035PXF90QJ55HHKQTK2VM80B"
+47 http request GET https://registry.npmjs.org/passport-twitter
+48 verbose already installed skipping grunt-contrib-copy@~0.5.0 /Users/alexthomas/EnglishClub
+49 verbose already installed skipping grunt-contrib-cssmin@~0.9.0 /Users/alexthomas/EnglishClub
+50 verbose already installed skipping grunt-contrib-htmlmin@~0.2.0 /Users/alexthomas/EnglishClub
+51 verbose already installed skipping grunt-contrib-imagemin@~0.7.1 /Users/alexthomas/EnglishClub
+52 verbose already installed skipping grunt-contrib-jshint@~0.10.0 /Users/alexthomas/EnglishClub
+53 verbose already installed skipping grunt-contrib-uglify@~0.4.0 /Users/alexthomas/EnglishClub
+54 verbose already installed skipping grunt-contrib-watch@~0.6.1 /Users/alexthomas/EnglishClub
+55 verbose already installed skipping grunt-google-cdn@~0.4.0 /Users/alexthomas/EnglishClub
+56 verbose already installed skipping grunt-newer@~0.7.0 /Users/alexthomas/EnglishClub
+57 verbose already installed skipping grunt-ng-annotate@^0.2.3 /Users/alexthomas/EnglishClub
+58 verbose already installed skipping grunt-rev@~0.1.0 /Users/alexthomas/EnglishClub
+59 verbose already installed skipping grunt-svgmin@~0.4.0 /Users/alexthomas/EnglishClub
+60 verbose already installed skipping grunt-usemin@~2.1.1 /Users/alexthomas/EnglishClub
+61 verbose already installed skipping grunt-env@~0.4.1 /Users/alexthomas/EnglishClub
+62 verbose already installed skipping grunt-node-inspector@~0.1.5 /Users/alexthomas/EnglishClub
+63 verbose already installed skipping grunt-nodemon@~0.2.0 /Users/alexthomas/EnglishClub
+64 verbose already installed skipping grunt-angular-templates@^0.5.4 /Users/alexthomas/EnglishClub
+65 verbose already installed skipping grunt-dom-munger@^3.4.0 /Users/alexthomas/EnglishClub
+66 verbose already installed skipping grunt-protractor-runner@^1.1.0 /Users/alexthomas/EnglishClub
+67 verbose already installed skipping grunt-asset-injector@^0.1.0 /Users/alexthomas/EnglishClub
+68 verbose already installed skipping grunt-karma@~0.8.2 /Users/alexthomas/EnglishClub
+69 silly cache add args [ 'grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control',
+69 silly cache add   null ]
+70 verbose cache add spec grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control
+71 verbose already installed skipping grunt-mocha-test@~0.10.2 /Users/alexthomas/EnglishClub
+72 verbose already installed skipping grunt-contrib-sass@^0.7.3 /Users/alexthomas/EnglishClub
+73 verbose already installed skipping jit-grunt@^0.5.0 /Users/alexthomas/EnglishClub
+74 verbose already installed skipping time-grunt@~0.3.1 /Users/alexthomas/EnglishClub
+75 verbose already installed skipping grunt-express-server@~0.4.17 /Users/alexthomas/EnglishClub
+76 verbose already installed skipping grunt-open@~0.2.3 /Users/alexthomas/EnglishClub
+77 verbose already installed skipping open@~0.0.4 /Users/alexthomas/EnglishClub
+78 verbose already installed skipping jshint-stylish@~0.1.5 /Users/alexthomas/EnglishClub
+79 verbose already installed skipping connect-livereload@~0.4.0 /Users/alexthomas/EnglishClub
+80 verbose already installed skipping karma-ng-scenario@~0.1.0 /Users/alexthomas/EnglishClub
+81 verbose already installed skipping karma-firefox-launcher@~0.1.3 /Users/alexthomas/EnglishClub
+82 verbose already installed skipping karma-script-launcher@~0.1.0 /Users/alexthomas/EnglishClub
+83 verbose already installed skipping karma-html2js-preprocessor@~0.1.0 /Users/alexthomas/EnglishClub
+84 verbose already installed skipping karma-ng-jade2js-preprocessor@^0.1.2 /Users/alexthomas/EnglishClub
+85 verbose already installed skipping karma-jasmine@~0.1.5 /Users/alexthomas/EnglishClub
+86 verbose already installed skipping karma-chrome-launcher@~0.1.3 /Users/alexthomas/EnglishClub
+87 verbose already installed skipping requirejs@~2.1.11 /Users/alexthomas/EnglishClub
+88 verbose already installed skipping karma-requirejs@~0.2.1 /Users/alexthomas/EnglishClub
+89 verbose already installed skipping karma-coffee-preprocessor@~0.2.1 /Users/alexthomas/EnglishClub
+90 verbose already installed skipping karma-jade-preprocessor@0.0.11 /Users/alexthomas/EnglishClub
+91 verbose already installed skipping karma-phantomjs-launcher@~0.1.4 /Users/alexthomas/EnglishClub
+92 verbose already installed skipping karma@~0.12.9 /Users/alexthomas/EnglishClub
+93 verbose already installed skipping karma-ng-html2js-preprocessor@~0.1.0 /Users/alexthomas/EnglishClub
+94 verbose already installed skipping supertest@~0.11.0 /Users/alexthomas/EnglishClub
+95 verbose already installed skipping should@~3.3.1 /Users/alexthomas/EnglishClub
+96 verbose request uri https://registry.npmjs.org/passport-google-oauth
+97 verbose request no auth needed
+98 info attempt registry request try #1 at 10:21:28 AM
+99 verbose etag "AG6TCT9PI7EYB87IC95MX7BAY"
+100 http request GET https://registry.npmjs.org/passport-google-oauth
+101 silly cache add parsed spec { raw: 'grunt-build-control@git+https://github.com/DaftMonk/grunt-build-control',
+101 silly cache add   scope: null,
+101 silly cache add   name: 'grunt-build-control',
+101 silly cache add   rawSpec: 'git+https://github.com/DaftMonk/grunt-build-control',
+101 silly cache add   spec: 'https://github.com/DaftMonk/grunt-build-control',
+101 silly cache add   type: 'git' }
+102 verbose addRemoteGit u="https://github.com/DaftMonk/grunt-build-control" silent=false
+103 silly addRemoteGit normalized { url: 'https://github.com/DaftMonk/grunt-build-control',
+103 silly addRemoteGit   branch: 'master' }
+104 silly addRemoteGit v https-github-com-DaftMonk-grunt-build-control-7e4d577b
+105 verbose addRemoteGit /Users/alexthomas/.npm/_git-remotes/https-github-com-DaftMonk-grunt-build-control-7e4d577b not in flight; cloning
+106 verbose already installed skipping express@~4.0.0 /Users/alexthomas/EnglishClub
+107 verbose already installed skipping morgan@~1.0.0 /Users/alexthomas/EnglishClub
+108 verbose already installed skipping body-parser@~1.5.0 /Users/alexthomas/EnglishClub
+109 verbose already installed skipping method-override@~1.0.0 /Users/alexthomas/EnglishClub
+110 info git [ 'config', '--get', 'remote.origin.url' ]
+111 verbose already installed skipping serve-favicon@~2.0.1 /Users/alexthomas/EnglishClub
+112 verbose already installed skipping cookie-parser@~1.0.1 /Users/alexthomas/EnglishClub
+113 verbose already installed skipping express-session@~1.0.2 /Users/alexthomas/EnglishClub
+114 verbose already installed skipping errorhandler@~1.0.0 /Users/alexthomas/EnglishClub
+115 verbose already installed skipping compression@~1.0.1 /Users/alexthomas/EnglishClub
+116 verbose already installed skipping lodash@~2.4.1 /Users/alexthomas/EnglishClub
+117 verbose already installed skipping ejs@~0.8.4 /Users/alexthomas/EnglishClub
+118 verbose already installed skipping mongoose@~3.8.8 /Users/alexthomas/EnglishClub
+119 verbose already installed skipping jsonwebtoken@^0.3.0 /Users/alexthomas/EnglishClub
+120 verbose already installed skipping express-jwt@^0.1.3 /Users/alexthomas/EnglishClub
+121 verbose already installed skipping passport@~0.2.0 /Users/alexthomas/EnglishClub
+122 verbose already installed skipping passport-local@~0.1.6 /Users/alexthomas/EnglishClub
+123 silly cache add args [ 'passport-facebook@latest', null ]
+124 verbose cache add spec passport-facebook@latest
+125 silly cache add parsed spec { raw: 'passport-facebook@latest',
+125 silly cache add   scope: null,
+125 silly cache add   name: 'passport-facebook',
+125 silly cache add   rawSpec: 'latest',
+125 silly cache add   spec: 'latest',
+125 silly cache add   type: 'tag' }
+126 verbose addNamed passport-facebook@latest
+127 silly addNamed semver.valid null
+128 silly addNamed semver.validRange null
+129 info addNameTag [ 'passport-facebook', 'latest' ]
+130 silly mapToRegistry name passport-facebook
+131 silly mapToRegistry using default registry
+132 silly mapToRegistry registry https://registry.npmjs.org/
+133 silly mapToRegistry uri https://registry.npmjs.org/passport-facebook
+134 verbose addNameTag registry:https://registry.npmjs.org/passport-facebook not in flight; fetching
+135 verbose request uri https://registry.npmjs.org/passport-facebook
+136 verbose request no auth needed
+137 info attempt registry request try #1 at 10:21:28 AM
+138 verbose etag "D05OYO7G74MN7923KTOOLLCE0"
+139 http request GET https://registry.npmjs.org/passport-facebook
+140 verbose git remote.origin.url https://github.com/DaftMonk/grunt-build-control
+141 info git [ 'fetch', '-a', 'origin' ]
+142 http 304 https://registry.npmjs.org/passport-twitter
+143 silly get cb [ 304,
+143 silly get   { date: 'Wed, 25 Mar 2015 16:21:29 GMT',
+143 silly get     server: 'Apache',
+143 silly get     via: '1.1 varnish',
+143 silly get     'last-modified': 'Wed, 25 Mar 2015 16:21:29 GMT',
+143 silly get     'cache-control': 'max-age=60',
+143 silly get     etag: '"3035PXF90QJ55HHKQTK2VM80B"',
+143 silly get     age: '0',
+143 silly get     'x-served-by': 'cache-lax1435-LAX',
+143 silly get     'x-cache': 'MISS',
+143 silly get     'x-cache-hits': '0',
+143 silly get     'x-timer': 'S1427300489.028604,VS0,VE43',
+143 silly get     vary: 'Accept',
+143 silly get     'content-length': '0',
+143 silly get     'keep-alive': 'timeout=10, max=50',
+143 silly get     connection: 'Keep-Alive' } ]
+144 verbose etag https://registry.npmjs.org/passport-twitter from cache
+145 verbose get saving passport-twitter to /Users/alexthomas/.npm/registry.npmjs.org/passport-twitter/.cache.json
+146 silly addNameTag next cb for passport-twitter with tag latest
+147 verbose addNamed passport-twitter@1.0.3
+148 silly addNamed semver.valid 1.0.3
+149 silly addNamed semver.validRange 1.0.3
+150 silly cache afterAdd passport-twitter@1.0.3
+151 verbose afterAdd /Users/alexthomas/.npm/passport-twitter/1.0.3/package/package.json not in flight; writing
+152 http 304 https://registry.npmjs.org/passport-facebook
+153 silly get cb [ 304,
+153 silly get   { date: 'Wed, 25 Mar 2015 16:21:29 GMT',
+153 silly get     server: 'Apache',
+153 silly get     via: '1.1 varnish',
+153 silly get     'last-modified': 'Wed, 25 Mar 2015 16:21:29 GMT',
+153 silly get     'cache-control': 'max-age=60',
+153 silly get     etag: '"D05OYO7G74MN7923KTOOLLCE0"',
+153 silly get     age: '0',
+153 silly get     'x-served-by': 'cache-lax1430-LAX',
+153 silly get     'x-cache': 'HIT',
+153 silly get     'x-cache-hits': '1',
+153 silly get     'x-timer': 'S1427300489.050344,VS0,VE43',
+153 silly get     vary: 'Accept',
+153 silly get     'content-length': '0',
+153 silly get     'keep-alive': 'timeout=10, max=50',
+153 silly get     connection: 'Keep-Alive' } ]
+154 verbose etag https://registry.npmjs.org/passport-facebook from cache
+155 verbose get saving passport-facebook to /Users/alexthomas/.npm/registry.npmjs.org/passport-facebook/.cache.json
+156 verbose afterAdd /Users/alexthomas/.npm/passport-twitter/1.0.3/package/package.json written
+157 info already installed passport-twitter@1.0.3
+158 silly addNameTag next cb for passport-facebook with tag latest
+159 verbose addNamed passport-facebook@2.0.0
+160 silly addNamed semver.valid 2.0.0
+161 silly addNamed semver.validRange 2.0.0
+162 silly cache afterAdd passport-facebook@2.0.0
+163 verbose afterAdd /Users/alexthomas/.npm/passport-facebook/2.0.0/package/package.json not in flight; writing
+164 verbose afterAdd /Users/alexthomas/.npm/passport-facebook/2.0.0/package/package.json written
+165 info already installed passport-facebook@2.0.0
+166 http 304 https://registry.npmjs.org/passport-google-oauth
+167 silly get cb [ 304,
+167 silly get   { date: 'Wed, 25 Mar 2015 16:21:29 GMT',
+167 silly get     server: 'Apache',
+167 silly get     via: '1.1 varnish',
+167 silly get     'last-modified': 'Wed, 25 Mar 2015 16:21:29 GMT',
+167 silly get     'cache-control': 'max-age=60',
+167 silly get     etag: '"AG6TCT9PI7EYB87IC95MX7BAY"',
+167 silly get     age: '0',
+167 silly get     'x-served-by': 'cache-lax1421-LAX',
+167 silly get     'x-cache': 'HIT',
+167 silly get     'x-cache-hits': '1',
+167 silly get     'x-timer': 'S1427300489.023332,VS0,VE86',
+167 silly get     vary: 'Accept',
+167 silly get     'content-length': '0',
+167 silly get     'keep-alive': 'timeout=10, max=50',
+167 silly get     connection: 'Keep-Alive' } ]
+168 verbose etag https://registry.npmjs.org/passport-google-oauth from cache
+169 verbose get saving passport-google-oauth to /Users/alexthomas/.npm/registry.npmjs.org/passport-google-oauth/.cache.json
+170 silly addNameTag next cb for passport-google-oauth with tag latest
+171 verbose addNamed passport-google-oauth@0.2.0
+172 silly addNamed semver.valid 0.2.0
+173 silly addNamed semver.validRange 0.2.0
+174 silly cache afterAdd passport-google-oauth@0.2.0
+175 verbose afterAdd /Users/alexthomas/.npm/passport-google-oauth/0.2.0/package/package.json not in flight; writing
+176 verbose afterAdd /Users/alexthomas/.npm/passport-google-oauth/0.2.0/package/package.json written
+177 info already installed passport-google-oauth@0.2.0
+178 verbose git fetch -a origin (https://github.com/DaftMonk/grunt-build-control)
+179 info git [ 'rev-list', '-n1', 'master' ]
+180 verbose git rev-list -n1 master 3d03ebbe49f8f963ef43c50af1084a15f56611fa
+181 verbose resolved git url git+https://github.com/DaftMonk/grunt-build-control#3d03ebbe49f8f963ef43c50af1084a15f56611fa
+182 info git [ 'clone',
+182 info git   '/Users/alexthomas/.npm/_git-remotes/https-github-com-DaftMonk-grunt-build-control-7e4d577b',
+182 info git   '/tmp/npm-29130-a2439613/git-cache-5296da51ff63/3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
+183 verbose git clone from /Users/alexthomas/.npm/_git-remotes/https-github-com-DaftMonk-grunt-build-control-7e4d577b
+184 verbose git clone Cloning into '/tmp/npm-29130-a2439613/git-cache-5296da51ff63/3d03ebbe49f8f963ef43c50af1084a15f56611fa'...
+184 verbose git clone done.
+185 info git [ 'checkout', '3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
+186 verbose git checkout Note: checking out '3d03ebbe49f8f963ef43c50af1084a15f56611fa'.
+186 verbose git checkout
+186 verbose git checkout You are in 'detached HEAD' state. You can look around, make experimental
+186 verbose git checkout changes and commit them, and you can discard any commits you make in this
+186 verbose git checkout state without impacting any branches by performing another checkout.
+186 verbose git checkout
+186 verbose git checkout If you want to create a new branch to retain commits you create, you may
+186 verbose git checkout do so (now or later) by using -b with the checkout command again. Example:
+186 verbose git checkout
+186 verbose git checkout   git checkout -b new_branch_name
+186 verbose git checkout
+186 verbose git checkout HEAD is now at 3d03ebb... Merge remote-tracking branch 'upstream/master'
+187 verbose addLocalDirectory /Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz not in flight; packing
+188 verbose tar pack [ '/Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz',
+188 verbose tar pack   '/tmp/npm-29130-a2439613/git-cache-5296da51ff63/3d03ebbe49f8f963ef43c50af1084a15f56611fa' ]
+189 verbose tarball /Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz
+190 verbose folder /tmp/npm-29130-a2439613/git-cache-5296da51ff63/3d03ebbe49f8f963ef43c50af1084a15f56611fa
+191 verbose addLocalTarball adding from inside cache /Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz
+192 silly cache afterAdd grunt-build-control@0.1.3
+193 verbose afterAdd /Users/alexthomas/.npm/grunt-build-control/0.1.3/package/package.json not in flight; writing
+194 verbose afterAdd /Users/alexthomas/.npm/grunt-build-control/0.1.3/package/package.json written
+195 silly install resolved [ { name: 'grunt-build-control',
+195 silly install resolved     description: 'Automate version control tasks for your project\'s built code. Keep built code in sync with source code, maintain multiple branches of built code, commit with automatic messages, and push to remote repositories.',
+195 silly install resolved     version: '0.1.3',
+195 silly install resolved     homepage: 'https://github.com/robwierzbowski/grunt-build-control',
+195 silly install resolved     author:
+195 silly install resolved      { name: 'Rob Wierzbowski',
+195 silly install resolved        email: 'hello@robwierzbowski.com',
+195 silly install resolved        url: 'http://robwierzbowski' },
+195 silly install resolved     repository:
+195 silly install resolved      { type: 'git',
+195 silly install resolved        url: 'git://github.com/robwierzbowski/grunt-build-control.git' },
+195 silly install resolved     bugs: { url: 'https://github.com/robwierzbowski/grunt-build-control/issues' },
+195 silly install resolved     licenses: [ [Object] ],
+195 silly install resolved     main: 'Gruntfile.js',
+195 silly install resolved     engines: { node: '>= 0.10.0' },
+195 silly install resolved     scripts: { test: 'grunt test' },
+195 silly install resolved     dependencies: { shelljs: '~0.2.6' },
+195 silly install resolved     devDependencies:
+195 silly install resolved      { 'grunt-contrib-jshint': '~0.1.1',
+195 silly install resolved        'grunt-contrib-clean': '~0.4.0',
+195 silly install resolved        'grunt-contrib-nodeunit': '~0.1.2',
+195 silly install resolved        grunt: '~0.4.1' },
+195 silly install resolved     peerDependencies: { grunt: '~0.4.1' },
+195 silly install resolved     keywords: [ 'gruntplugin' ],
+195 silly install resolved     gitHead: '3d03ebbe49f8f963ef43c50af1084a15f56611fa',
+195 silly install resolved     readme: '# grunt-build-control\n\n> Version control built code.\n\n### HELP WRITE TESTS FOR THIS TASK\n\nFor continued development, this library needs test coverage. If you like writing tests and like this Grunt task, please take a look at [issue #19](https://github.com/robwierzbowski/grunt-build-control/issues/19) and consider helping with a pull request. Any assistance is appreciated.\n\n## Getting started\n\nThis plugin requires [Grunt](http://gruntjs.com/) `~0.4.0` and [Git](http://git-scm.com/) `> 1.8`.\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide which explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with Grunt you can install the plugin with the command:\n\n```shell\nnpm install grunt-build-control --save-dev\n```\n\nAfter the plugin has been installed, load it in your Gruntfile with:\n\n```js\ngrunt.loadNpmTasks(\'grunt-build-control\');\n```\n\n## buildcontrol task\n\n_Run this task with the `grunt buildcontrol` command._\n\nAutomate version control tasks for your project\'s built code. \n\nKeep built code in sync with source code, maintain multiple branches of built code, commit with automatic messages, and push to remote repositories.\n\n### Setup\n\nYour project must have a compile or build process that outputs code to a subdirectory of the main project.\n\nAdd the build directory to the main project\'s .gitignore, and make sure the build process doesn\'t delete .git directories inside the build directory. If you\'re using a [Yeoman](http://yeoman.io) generator these steps are taken care of for you already.\n\n### Options\n\n#### dir\n\nType: `String`  \nDefault: `dist`  \n\nThe directory that contains your built code.\n\n#### branch\n\nType: `String`  \nDefault: `dist`  \n\nThe branch to commit to.\n\n#### remote\n\nType: `String`  \nDefault: `../`  \n\nThe remote to push to. Common examples include a distribution repository (Heroku or Scalr), your main project\'s remote (gh-pages branch on Github), or the local project repository itself (`../`).\n\n#### commit\n\nType: `Boolean`  \nDefault: `false`  \n\nCommits built code to `branch`. A new commit is only created if the built code has changed.\n\n#### tag\n\nType: `Boolean` or `String`  \nDefault: `false`  \n\nIf set to a string, adds its value as a lightweight git tag to the local built repo. Try loading your project\'s package.json as a variable and tagging with `pkg.version`.\n\n#### push\n\nType: `Boolean`  \nDefault: `false`  \n\nPushes `branch` to `remote`. If `tag` is set, pushes the specified tag as well.\n\n#### message\n\nType: `String`  \nDefault: `Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%  `\n\nThe commit message to use when committing. It must be a safe commit message for the command line, with special characters and double quotes escaped.\n\nYou can use the following tokens to print information about the main project:\n\n- `%sourceName%`: The main project\'s name, read from package.json or the project directory\n- `%sourceBranch%`: The main project\'s current branch\n- `%sourceCommit%`: The main project\'s most recent commit\n\n#### connectCommits\n\nType: `Boolean`  \nDefault: `true`  \n\nMake sure that every commit on the built code branch matches a commit on the main project branch. If the main project\'s working directory has uncommitted changes, a commit task will throw an error.\n\n### Usage\n\nA common use of grunt-build-control is to commit and push built code to the GitHub pages branch of the main repository, or to the master branch of a git-based deployment server like Heroku. \n\n```js\n// Project configuration.\nvar pkg = require(\'./package.json\');\n\ngrunt.initConfig({\n\n  // Various Grunt tasks...\n\n  buildcontrol: {\n    options: {\n      dir: \'dist\',\n      commit: true,\n      push: true,\n      message: \'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%\'\n    },\n    pages: {\n      options: {\n        remote: \'git@github.com:example_user/example_webapp.git\',\n        branch: \'gh-pages\'\n      }\n    },\n    heroku: {\n      options: {\n        remote: \'git@heroku.com:example-heroku-webapp-1988.git\',\n        branch: \'master\',\n        tag: pkg.version\n      }\n    },\n    local: {\n      options: {\n        remote: \'../\',\n        branch: \'build\'\n      }\n    }\n  }\n});\n\ngrunt.registerTask(\'build\', [\n  // Collection of tasks that build code to the \'dist\' directory...\n]);\n```\n\nIn this example a user is working on a Yeoman-based web app, with their project\'s source code hosted at `git@github.com:example_user/example_webapp.git`. To deploy they first run `grunt build` to build a minified, optimized version of their app into the \'dist\' directory. \n\nRunning `grunt buildcontrol:pages` commits the built code to the gh-pages branch of the \'dist/.git\' repository and pushes to the gh-pages branch of `git@github.com:example_user/example_webapp.git`. \n\nRunning `grunt buildcontrol:heroku` will commit the built code to the master branch of the \'dist/.git\' repository, tag the latest commit in \'dist/.git\' with the value of `pkg.version` if the tag doesn\'t already exist, and push refs and tags to the master branch of `git@heroku.com:example-heroku-webapp-1988.git`.\n\nRunning `grunt buildcontrol:local` will commit the built code to the build branch of the \'dist/.git\' repository and push to the build branch of the local source code repository. The local project repository can then be synced with a remote.\n\n#### Working with .gitignores\n\nYou may wish to commit files or directories that are ignored globally or in the source repository (e.g., bower_compontents), or make file inclusion and exclusion the responsibility of the build process alone.\n\nIn order to scope gitignore rules to the build directory only, create a file named \'gitignore\' in your source directory: \n\n```shell\n# Unignore everything\n!**/*\n\n# Re-ignore things\n...your ignore rules here\n```\n\nThen copy it to the build directory during your build process as \'.gitignore\'.\n\n#### Notes\n\nGrunt-build-control deploys to git endpoints. If you want to deploy to a private server [this tutorial by @curtisblackwell ](http://curtisblackwell.com/blog/my-deploy-method-brings-most-of-the-boys-to-the-yard) is a good place to start.\n\n`buildcontrol` will add commits on top of the existing history of the remote branch if available.\n\n`buildcontrol` is a synchronous task, and fetches from your remote before each commit or push. Depending on the location of your remote, the size of commits, and network speed it can be a long running task.\n\nIt\'s best to run `buildcontrol` manually after your build process or as the last step in a build and deploy task.\n\nIf a git conflict occurs (usually because another user has force-pushed to the deployment server) delete the built code directory and run build and build control again.\n\nDon\'t check out built code branches while in the main project directory. Differences in untracked files will cause issues.\n\n<!-- \n## Todo:\n\n- replace as many porcelain commands as possible with plumbing.\n- describe or list similar projects with limitations?  \n  https://npmjs.org/package/grunt-github-pages  \n  https://npmjs.org/package/grunt-git-dist  \n  https://npmjs.org/package/grunt-git-selective-deploy  \n\n-->\n \n## Contribute\n\nPost bugs and feature requests to the [Github issue tracker](https://github.com/robwierzbowski/grunt-build-control/issues). In lieu of a formal styleguide, take care to maintain the existing coding style. Lint and test your code using [Grunt](https://github.com/gruntjs/grunt).\n\n## Release History\n\n- 2013-11-29 v0.1.2: Add defaults for all properties.\n- 2013-10-19 v0.1.1: Stable initial release.\n\n## License\n\n[MIT](http://en.wikipedia.org/wiki/MIT_License)\n\n\n\n[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/robwierzbowski/grunt-build-control/trend.png)](https://bitdeli.com/free "Bitdeli Badge")\n\n',
+195 silly install resolved     readmeFilename: 'README.md',
+195 silly install resolved     _id: 'grunt-build-control@0.1.3',
+195 silly install resolved     _shasum: 'e88421461ca13f7b0c35822c0b153410b8a297de',
+195 silly install resolved     _from: '../../../tmp/npm-29130-a2439613/git-cache-5296da51ff63/3d03ebbe49f8f963ef43c50af1084a15f56611fa',
+195 silly install resolved     _resolved: 'git+https://github.com/DaftMonk/grunt-build-control#3d03ebbe49f8f963ef43c50af1084a15f56611fa' } ]
+196 info install grunt-build-control@0.1.3 into /Users/alexthomas/EnglishClub
+197 info installOne grunt-build-control@0.1.3
+198 verbose installOne of grunt-build-control to /Users/alexthomas/EnglishClub not in flight; installing
+199 verbose lock using /Users/alexthomas/.npm/_locks/grunt-build-control-91f91a806cff6a0d.lock for /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+200 silly install write writing grunt-build-control 0.1.3 to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+201 silly cache addNamed cb grunt-build-control@0.1.3
+202 verbose unbuild node_modules/grunt-build-control
+203 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+204 silly gentlyRm purging /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+205 silly gentlyRm quitting because other entries in /Users/alexthomas/EnglishClub/node_modules
+206 verbose tar unpack /Users/alexthomas/.npm/grunt-build-control/0.1.3/package.tgz
+207 verbose tar unpacking to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+208 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+209 silly gunzTarPerm modes [ '755', '644' ]
+210 silly gunzTarPerm extractEntry package.json
+211 silly gunzTarPerm extractEntry .npmignore
+212 silly gunzTarPerm extractEntry README.md
+213 silly gunzTarPerm extractEntry LICENSE
+214 silly gunzTarPerm extractEntry Gruntfile.js
+215 silly gunzTarPerm extractEntry .jshintrc
+216 silly gunzTarPerm extractEntry tasks/build_control.js
+217 silly gunzTarPerm extractEntry test/build_control_test.js
+218 silly gunzTarPerm extractEntry test/expected/custom_options
+219 silly gunzTarPerm extractEntry test/expected/default_options
+220 silly gunzTarPerm extractEntry test/fixtures/123
+221 silly gunzTarPerm extractEntry test/fixtures/testing
+222 info preinstall grunt-build-control@0.1.3
+223 silly prepareForInstallMany adding shelljs@~0.2.6 from grunt-build-control dependencies
+224 silly cache add args [ 'shelljs@~0.2.6', null ]
+225 verbose cache add spec shelljs@~0.2.6
+226 silly cache add parsed spec { raw: 'shelljs@~0.2.6',
+226 silly cache add   scope: null,
+226 silly cache add   name: 'shelljs',
+226 silly cache add   rawSpec: '~0.2.6',
+226 silly cache add   spec: '>=0.2.6 <0.3.0',
+226 silly cache add   type: 'range' }
+227 verbose addNamed shelljs@>=0.2.6 <0.3.0
+228 silly addNamed semver.valid null
+229 silly addNamed semver.validRange >=0.2.6 <0.3.0
+230 silly addNameRange { name: 'shelljs', range: '>=0.2.6 <0.3.0', hasData: false }
+231 silly mapToRegistry name shelljs
+232 silly mapToRegistry using default registry
+233 silly mapToRegistry registry https://registry.npmjs.org/
+234 silly mapToRegistry uri https://registry.npmjs.org/shelljs
+235 verbose addNameRange registry:https://registry.npmjs.org/shelljs not in flight; fetching
+236 verbose request uri https://registry.npmjs.org/shelljs
+237 verbose request no auth needed
+238 info attempt registry request try #1 at 10:21:29 AM
+239 verbose etag "2FHKL7WZEJD7D1XJJ26XEHV2N"
+240 http request GET https://registry.npmjs.org/shelljs
+241 http 304 https://registry.npmjs.org/shelljs
+242 silly get cb [ 304,
+242 silly get   { date: 'Wed, 25 Mar 2015 16:21:29 GMT',
+242 silly get     server: 'Apache',
+242 silly get     via: '1.1 varnish',
+242 silly get     'last-modified': 'Wed, 25 Mar 2015 16:21:29 GMT',
+242 silly get     'cache-control': 'max-age=60',
+242 silly get     etag: '"2FHKL7WZEJD7D1XJJ26XEHV2N"',
+242 silly get     age: '28',
+242 silly get     'x-served-by': 'cache-lax1423-LAX',
+242 silly get     'x-cache': 'HIT',
+242 silly get     'x-cache-hits': '1',
+242 silly get     'x-timer': 'S1427300489.996515,VS0,VE0',
+242 silly get     vary: 'Accept',
+242 silly get     'content-length': '0',
+242 silly get     'keep-alive': 'timeout=10, max=50',
+242 silly get     connection: 'Keep-Alive' } ]
+243 verbose etag https://registry.npmjs.org/shelljs from cache
+244 verbose get saving shelljs to /Users/alexthomas/.npm/registry.npmjs.org/shelljs/.cache.json
+245 silly addNameRange number 2 { name: 'shelljs', range: '>=0.2.6 <0.3.0', hasData: true }
+246 silly addNameRange versions [ 'shelljs',
+246 silly addNameRange   [ '0.0.1',
+246 silly addNameRange     '0.0.2',
+246 silly addNameRange     '0.0.3',
+246 silly addNameRange     '0.0.4',
+246 silly addNameRange     '0.0.5',
+246 silly addNameRange     '0.0.6',
+246 silly addNameRange     '0.0.7',
+246 silly addNameRange     '0.0.8',
+246 silly addNameRange     '0.0.9',
+246 silly addNameRange     '0.1.0',
+246 silly addNameRange     '0.1.1',
+246 silly addNameRange     '0.1.2',
+246 silly addNameRange     '0.1.3',
+246 silly addNameRange     '0.1.4',
+246 silly addNameRange     '0.2.0',
+246 silly addNameRange     '0.2.1',
+246 silly addNameRange     '0.2.2',
+246 silly addNameRange     '0.2.3',
+246 silly addNameRange     '0.2.4',
+246 silly addNameRange     '0.2.5',
+246 silly addNameRange     '0.2.6',
+246 silly addNameRange     '0.3.0',
+246 silly addNameRange     '0.4.0',
+246 silly addNameRange     '0.0.1-alpha1',
+246 silly addNameRange     '0.0.2-pre1',
+246 silly addNameRange     '0.0.4-pre1',
+246 silly addNameRange     '0.0.5-pre1',
+246 silly addNameRange     '0.0.5-pre2',
+246 silly addNameRange     '0.0.5-pre3',
+246 silly addNameRange     '0.0.5-pre4',
+246 silly addNameRange     '0.0.6-pre1',
+246 silly addNameRange     '0.0.6-pre2' ] ]
+247 verbose addNamed shelljs@0.2.6
+248 silly addNamed semver.valid 0.2.6
+249 silly addNamed semver.validRange 0.2.6
+250 silly cache afterAdd shelljs@0.2.6
+251 verbose afterAdd /Users/alexthomas/.npm/shelljs/0.2.6/package/package.json not in flight; writing
+252 verbose afterAdd /Users/alexthomas/.npm/shelljs/0.2.6/package/package.json written
+253 silly install resolved [ { name: 'shelljs',
+253 silly install resolved     version: '0.2.6',
+253 silly install resolved     author: { name: 'Artur Adib', email: 'aadib@mozilla.com' },
+253 silly install resolved     description: 'Portable Unix shell commands for Node.js',
+253 silly install resolved     keywords: [ 'unix', 'shell', 'makefile', 'make', 'jake', 'synchronous' ],
+253 silly install resolved     repository: { type: 'git', url: 'git://github.com/arturadib/shelljs.git' },
+253 silly install resolved     homepage: 'http://github.com/arturadib/shelljs',
+253 silly install resolved     main: './shell.js',
+253 silly install resolved     scripts: { test: 'node scripts/run-tests' },
+253 silly install resolved     bin: { shjs: './bin/shjs' },
+253 silly install resolved     dependencies: {},
+253 silly install resolved     devDependencies: { jshint: '~2.1.11' },
+253 silly install resolved     optionalDependencies: {},
+253 silly install resolved     engines: { node: '>=0.8.0' },
+253 silly install resolved     bugs: { url: 'https://github.com/arturadib/shelljs/issues' },
+253 silly install resolved     _id: 'shelljs@0.2.6',
+253 silly install resolved     dist:
+253 silly install resolved      { shasum: '90492d72ffcc8159976baba62fb0f6884f0c3378',
+253 silly install resolved        tarball: 'http://registry.npmjs.org/shelljs/-/shelljs-0.2.6.tgz' },
+253 silly install resolved     _from: 'shelljs@>=0.2.6 <0.3.0',
+253 silly install resolved     _npmVersion: '1.3.8',
+253 silly install resolved     _npmUser: { name: 'artur', email: 'arturadib@gmail.com' },
+253 silly install resolved     maintainers: [ [Object] ],
+253 silly install resolved     directories: {},
+253 silly install resolved     _shasum: '90492d72ffcc8159976baba62fb0f6884f0c3378',
+253 silly install resolved     _resolved: 'https://registry.npmjs.org/shelljs/-/shelljs-0.2.6.tgz',
+253 silly install resolved     readme: 'ERROR: No README data found!' } ]
+254 info install shelljs@0.2.6 into /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+255 info installOne shelljs@0.2.6
+256 verbose installOne of shelljs to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control not in flight; installing
+257 verbose lock using /Users/alexthomas/.npm/_locks/shelljs-bc2f6cc168bad2cc.lock for /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
+258 silly install write writing shelljs 0.2.6 to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
+259 silly cache addNamed cb shelljs@0.2.6
+260 verbose unbuild node_modules/grunt-build-control/node_modules/shelljs
+261 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
+262 verbose tar unpack /Users/alexthomas/.npm/shelljs/0.2.6/package.tgz
+263 verbose tar unpacking to /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
+264 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
+265 silly gunzTarPerm modes [ '755', '644' ]
+266 silly gunzTarPerm extractEntry package.json
+267 silly gunzTarPerm extractEntry .npmignore
+268 silly gunzTarPerm extractEntry README.md
+269 silly gunzTarPerm extractEntry LICENSE
+270 silly gunzTarPerm extractEntry global.js
+271 silly gunzTarPerm extractEntry make.js
+272 silly gunzTarPerm extractEntry shell.js
+273 silly gunzTarPerm extractEntry bin/shjs
+274 silly gunzTarPerm extractEntry .travis.yml
+275 silly gunzTarPerm extractEntry .jshintrc
+276 silly gunzTarPerm extractEntry scripts/generate-docs.js
+277 silly gunzTarPerm extractEntry scripts/run-tests.js
+278 silly gunzTarPerm extractEntry .documentup.json
+279 silly gunzTarPerm extractEntry src/cat.js
+280 silly gunzTarPerm extractEntry src/exec.js
+281 silly gunzTarPerm extractEntry src/find.js
+282 silly gunzTarPerm extractEntry src/grep.js
+283 silly gunzTarPerm extractEntry src/ls.js
+284 silly gunzTarPerm extractEntry src/error.js
+285 silly gunzTarPerm extractEntry src/mv.js
+286 silly gunzTarPerm extractEntry src/popd.js
+287 silly gunzTarPerm extractEntry src/pushd.js
+288 silly gunzTarPerm extractEntry src/pwd.js
+289 silly gunzTarPerm extractEntry src/rm.js
+290 silly gunzTarPerm extractEntry src/echo.js
+291 silly gunzTarPerm extractEntry src/sed.js
+292 silly gunzTarPerm extractEntry src/dirs.js
+293 silly gunzTarPerm extractEntry src/tempdir.js
+294 silly gunzTarPerm extractEntry src/cp.js
+295 silly gunzTarPerm extractEntry src/test.js
+296 silly gunzTarPerm extractEntry src/common.js
+297 silly gunzTarPerm extractEntry src/to.js
+298 silly gunzTarPerm extractEntry src/chmod.js
+299 silly gunzTarPerm extractEntry src/toEnd.js
+300 silly gunzTarPerm extractEntry src/cd.js
+301 silly gunzTarPerm extractEntry src/which.js
+302 silly gunzTarPerm extractEntry src/mkdir.js
+303 info preinstall shelljs@0.2.6
+304 silly install resolved []
+305 verbose about to build /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
+306 info build /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
+307 verbose linkStuff [ false,
+307 verbose linkStuff   false,
+307 verbose linkStuff   false,
+307 verbose linkStuff   '/Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules' ]
+308 info linkStuff shelljs@0.2.6
+309 verbose linkBins shelljs@0.2.6
+310 verbose link bins [ { shjs: './bin/shjs' },
+310 verbose link bins   '/Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/.bin',
+310 verbose link bins   false ]
+311 verbose linkMans shelljs@0.2.6
+312 verbose rebuildBundles shelljs@0.2.6
+313 verbose gentlyRm vacuuming /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/.bin/shjs
+314 info install shelljs@0.2.6
+315 info postinstall shelljs@0.2.6
+316 verbose unlock done using /Users/alexthomas/.npm/_locks/shelljs-bc2f6cc168bad2cc.lock for /Users/alexthomas/EnglishClub/node_modules/grunt-build-control/node_modules/shelljs
+317 verbose about to build /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+318 info build /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+319 verbose linkStuff [ false,
+319 verbose linkStuff   false,
+319 verbose linkStuff   false,
+319 verbose linkStuff   '/Users/alexthomas/EnglishClub/node_modules' ]
+320 info linkStuff grunt-build-control@0.1.3
+321 verbose linkBins grunt-build-control@0.1.3
+322 verbose linkMans grunt-build-control@0.1.3
+323 verbose rebuildBundles grunt-build-control@0.1.3
+324 verbose rebuildBundles [ '.bin', 'shelljs' ]
+325 info install grunt-build-control@0.1.3
+326 info postinstall grunt-build-control@0.1.3
+327 verbose unlock done using /Users/alexthomas/.npm/_locks/grunt-build-control-91f91a806cff6a0d.lock for /Users/alexthomas/EnglishClub/node_modules/grunt-build-control
+328 info build /Users/alexthomas/EnglishClub
+329 verbose linkStuff [ false, false, false, '/Users/alexthomas' ]
+330 info linkStuff english-club@0.0.0
+331 verbose linkBins english-club@0.0.0
+332 verbose linkMans english-club@0.0.0
+333 verbose rebuildBundles english-club@0.0.0
+334 verbose rebuildBundles [ '.bin',
+334 verbose rebuildBundles   'body-parser',
+334 verbose rebuildBundles   'composable-middleware',
+334 verbose rebuildBundles   'compression',
+334 verbose rebuildBundles   'connect-livereload',
+334 verbose rebuildBundles   'connect-mongo',
+334 verbose rebuildBundles   'cookie-parser',
+334 verbose rebuildBundles   'ejs',
+334 verbose rebuildBundles   'errorhandler',
+334 verbose rebuildBundles   'express',
+334 verbose rebuildBundles   'express-jwt',
+334 verbose rebuildBundles   'express-session',
+334 verbose rebuildBundles   'grunt',
+334 verbose rebuildBundles   'grunt-angular-templates',
+334 verbose rebuildBundles   'grunt-asset-injector',
+334 verbose rebuildBundles   'grunt-autoprefixer',
+334 verbose rebuildBundles   'grunt-build-control',
+334 verbose rebuildBundles   'grunt-concurrent',
+334 verbose rebuildBundles   'grunt-contrib-clean',
+334 verbose rebuildBundles   'grunt-contrib-concat',
+334 verbose rebuildBundles   'grunt-contrib-copy',
+334 verbose rebuildBundles   'grunt-contrib-cssmin',
+334 verbose rebuildBundles   'grunt-contrib-htmlmin',
+334 verbose rebuildBundles   'grunt-contrib-imagemin',
+334 verbose rebuildBundles   'grunt-contrib-jshint',
+334 verbose rebuildBundles   'grunt-contrib-sass',
+334 verbose rebuildBundles   'grunt-contrib-uglify',
+334 verbose rebuildBundles   'grunt-contrib-watch',
+334 verbose rebuildBundles   'grunt-dom-munger',
+334 verbose rebuildBundles   'grunt-env',
+334 verbose rebuildBundles   'grunt-express-server',
+334 verbose rebuildBundles   'grunt-google-cdn',
+334 verbose rebuildBundles   'grunt-karma',
+334 verbose rebuildBundles   'grunt-mocha-test',
+334 verbose rebuildBundles   'grunt-newer',
+334 verbose rebuildBundles   'grunt-ng-annotate',
+334 verbose rebuildBundles   'grunt-node-inspector',
+334 verbose rebuildBundles   'grunt-nodemon',
+334 verbose rebuildBundles   'grunt-open',
+334 verbose rebuildBundles   'grunt-protractor-runner',
+334 verbose rebuildBundles   'grunt-rev',
+334 verbose rebuildBundles   'grunt-svgmin',
+334 verbose rebuildBundles   'grunt-usemin',
+334 verbose rebuildBundles   'grunt-wiredep',
+334 verbose rebuildBundles   'jit-grunt',
+334 verbose rebuildBundles   'jshint-stylish',
+334 verbose rebuildBundles   'jsonwebtoken',
+334 verbose rebuildBundles   'karma',
+334 verbose rebuildBundles   'karma-chrome-launcher',
+334 verbose rebuildBundles   'karma-coffee-preprocessor',
+334 verbose rebuildBundles   'karma-firefox-launcher',
+334 verbose rebuildBundles   'karma-html2js-preprocessor',
+334 verbose rebuildBundles   'karma-jade-preprocessor',
+334 verbose rebuildBundles   'karma-jasmine',
+334 verbose rebuildBundles   'karma-ng-html2js-preprocessor',
+334 verbose rebuildBundles   'karma-ng-jade2js-preprocessor',
+334 verbose rebuildBundles   'karma-ng-scenario',
+334 verbose rebuildBundles   'karma-phantomjs-launcher',
+334 verbose rebuildBundles   'karma-requirejs',
+334 verbose rebuildBundles   'karma-script-launcher',
+334 verbose rebuildBundles   'lodash',
+334 verbose rebuildBundles   'method-override',
+334 verbose rebuildBundles   'mongoose',
+334 verbose rebuildBundles   'morgan',
+334 verbose rebuildBundles   'open',
+334 verbose rebuildBundles   'passport',
+334 verbose rebuildBundles   'passport-facebook',
+334 verbose rebuildBundles   'passport-google-oauth',
+334 verbose rebuildBundles   'passport-local',
+334 verbose rebuildBundles   'passport-twitter',
+334 verbose rebuildBundles   'requirejs',
+334 verbose rebuildBundles   'serve-favicon',
+334 verbose rebuildBundles   'should',
+334 verbose rebuildBundles   'socket.io',
+334 verbose rebuildBundles   'socket.io-client',
+334 verbose rebuildBundles   'socketio-jwt',
+334 verbose rebuildBundles   'supertest',
+334 verbose rebuildBundles   'time-grunt',
+334 verbose rebuildBundles   'yo' ]
+335 verbose rebuild bundle /Users/alexthomas/EnglishClub/node_modules/yo
+336 info build /Users/alexthomas/EnglishClub/node_modules/yo
+337 info preinstall yo@1.4.6
+338 verbose linkStuff [ false,
+338 verbose linkStuff   false,
+338 verbose linkStuff   false,
+338 verbose linkStuff   '/Users/alexthomas/EnglishClub/node_modules' ]
+339 info linkStuff yo@1.4.6
+340 warn prefer global yo@1.4.6 should be installed with -g
+341 verbose linkBins yo@1.4.6
+342 verbose link bins [ { yo: 'lib/cli.js' },
+342 verbose link bins   '/Users/alexthomas/EnglishClub/node_modules/.bin',
+342 verbose link bins   false ]
+343 verbose linkMans yo@1.4.6
+344 verbose rebuildBundles yo@1.4.6
+345 verbose rebuildBundles [ 'inquirer',
+345 verbose rebuildBundles   'insight',
+345 verbose rebuildBundles   'lodash',
+345 verbose rebuildBundles   'meow',
+345 verbose rebuildBundles   'npm-keyword',
+345 verbose rebuildBundles   'opn',
+345 verbose rebuildBundles   'package-json',
+345 verbose rebuildBundles   'root-check',
+345 verbose rebuildBundles   'sort-on',
+345 verbose rebuildBundles   'string-length',
+345 verbose rebuildBundles   'titleize',
+345 verbose rebuildBundles   'update-notifier',
+345 verbose rebuildBundles   'user-home',
+345 verbose rebuildBundles   'yeoman-character',
+345 verbose rebuildBundles   'yeoman-doctor',
+345 verbose rebuildBundles   'yeoman-environment',
+345 verbose rebuildBundles   'yosay' ]
+346 verbose stack Error: ENOENT, chmod '/Users/alexthomas/EnglishClub/node_modules/yo/lib/cli.js'
+346 verbose stack     at Error (native)
+347 verbose cwd /Users/alexthomas/EnglishClub
+348 error Darwin 14.1.0
+349 error argv "node" "/usr/local/bin/npm" "install"
+350 error node v0.12.0
+351 error npm  v2.5.1
+352 error path /Users/alexthomas/EnglishClub/node_modules/yo/lib/cli.js
+353 error code ENOENT
+354 error errno -2
+355 error enoent ENOENT, chmod '/Users/alexthomas/EnglishClub/node_modules/yo/lib/cli.js'
+355 error enoent This is most likely not a problem with npm itself
+355 error enoent and is related to npm not being able to find a file.
+356 verbose exit [ -2, true ]

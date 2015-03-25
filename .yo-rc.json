@@ -11,11 +11,17 @@
     "filters": {
       "js": true,
       "html": true,
-      "css": true,
-      "ngroute": true,
+      "sass": true,
+      "uirouter": true,
       "bootstrap": true,
       "uibootstrap": true,
-      "mongoose": true
+      "socketio": true,
+      "mongoose": true,
+      "auth": true,
+      "oauth": true,
+      "googleAuth": true,
+      "facebookAuth": true,
+      "twitterAuth": true
     }
   },
   "generator-ng-component": {

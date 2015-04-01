@@ -8,14 +8,14 @@ var ListingSchema = new Schema({
   subtitle: String,
   listing_summary: String,
   location: String,
-  latitude: String,
-  longitude: String,
-  city_id: String,
+  latitude: Double,
+  longitude: Double,
+  city_id: ObjectId,
   views: String,
   update_to: String,
-  created_at: String,
-  updated_at: String,
-  deleted_at: String
+  created_at: Timestamp,
+  updated_at: Timestamp,
+  deleted_at: Timestamp
 });
 
 module.exports = mongoose.model('Listing', ListingSchema);

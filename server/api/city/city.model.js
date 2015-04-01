@@ -6,10 +6,10 @@ var mongoose = require('mongoose'),
 var CitySchema = new Schema({
   name: String,
   url: String,
-  country_id: String,
-  created_at: String,
-  updated_at: String,
-  deleted_at: String
+  country_id: ObjectId,
+  created_at: Timestamp,
+  updated_at: Timestamp,
+  deleted_at: Timestamp
 });
 
 module.exports = mongoose.model('City', CitySchema);

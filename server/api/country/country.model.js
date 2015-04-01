@@ -6,9 +6,9 @@ var mongoose = require('mongoose'),
 var CountrySchema = new Schema({
   name: String,
   url: String,
-  created_at: String,
-  updated_at: String,
-  deleted_at: String
+  created_at: Timestamp,
+  updated_at: Timestamp,
+  deleted_at: Timestamp
 });
 
 module.exports = mongoose.model('Country', CountrySchema);

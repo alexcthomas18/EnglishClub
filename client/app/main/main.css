@@ -17,16 +17,117 @@
     background: url("/assets/images/Rome.jpg") center center no-repeat;
     background-size:100%;
     position: relative;
-    padding: 200px 15px;
+    padding: 14% 0%;
     color: #F5F5F5;
     text-align: center;
-    text-shadow: 1px 1px 1px #000000;
+    text-shadow: 1px 1px 0px #000,0px 0px 10px #000;
     
 }
 
+.top-locations h1 {
+    text-align:center;
+    padding:20px 0px 10px 0px;
+    color:#555;
+}
+.top-locations h2 {
+    text-align:center;
+    color:#555;
+}
+.top-locations p {
+    color:#777;
+    text-align:justify;
+}
+
+
+
+.more-info .col-md-4 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.more-info h1 {
+    text-align:center;
+    padding:0px 0px 30px 0px;
+    color:#555;
+}
+.more-info h2 {
+    margin:5px 0 20px 0;
+    color:#fff;
+}
+.more-info p {
+    color:#fff;
+}
+.more-info .get-social {
+    position: relative;
+    height:270px;
+    background: url('/assets/images/mobileSocialPeople.jpg') center center no-repeat;
+    background-size: 156% auto;
+}
+.more-info .get-social .intro-box {
+    position:absolute;
+    top:0px;
+    left:50%;
+    margin-left:-75px;
+    padding:12px 30px;
+    background:rgba(240, 173, 78,.8);
+    color:#fff;
+    font-weight:bold;
+}
+.more-info .about-teachers {
+    position: relative;
+    height:270px;
+    background: url('/assets/images/missionaries.jpg') top center no-repeat;
+    background-size: 156% auto;
+}
+.more-info .about-teachers .intro-box {
+    position:absolute;
+    top:0px;
+    left:50%;
+    margin-left:-100px;
+    padding:12px 30px;
+    background:rgba(0,122,135,.8);
+    color:#fff;
+    font-weight:bold;
+}
+.more-info .about-us {
+    position:relative;
+    height:270px;
+    background: url('/assets/images/temple.jpg') center center no-repeat;
+    background-size: 136% auto;
+}
+.more-info .about-us .intro-box {
+    position:absolute;
+    top:0px;
+    left:50%;
+    margin-left:-70px;
+    padding:12px 30px;
+    background:rgba(255,170,145,.8);
+    color:#fff;
+    font-weight:bold;
+}
+
+
+.top-clubs h1 {
+    text-align:center;
+    padding:30px 0px 10px 0px;
+    color:#555;
+}
+.top-clubs h2 {
+    color:#555;
+}
+.top-clubs p {
+    color:#777;
+    text-align:justify;
+}
+
 .footer {
+    background: #f9f9f9;
     text-align: center;
     padding: 30px 0;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
+}
+
+/*BOOTSTRAP OVERWRITES*/
+.row {
+    margin:0px;
 }

@@ -1,30 +1,274 @@
+<!-- HOW IT WORKS -->
+<div class="slide" ng-show="showHowWorks" style="background:#609fc7;padding:50px 0px 0px 0px;">
+  <div class="container-fluid">
+    <h1 style="color:#fff;">
+      <i class="glyphicon glyphicon-info-sign"></i>
+      <i>ABC... It's Easy as...</i> 
+    </h1>
+    <hr>
+    <div class="row" style="margin:0px;text-align:center;color:#fff;">
+      <div class="col-md-4">
+        <h1 style="color:#fff;">1| Desire</h1>
+        <div class="row">
+          <div class="col-xs-6" >
+            <i style="color:#fff;font-size:150px;" class="fa fa-child"></i>
+          </div>
+          <div class="col-xs-6" style="text-align:justify;border-left:1px solid #fff;">
+            <p>
+              Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h1 style="color:#fff;">2| Find</h1>
+        <div class="row">
+          <div class="col-xs-6" >
+            <i style="color:#fff;font-size:150px;" class="fa fa-search"></i>
+          </div>
+          <div class="col-xs-6" style="text-align:justify;border-left:1px solid #fff;">
+            <p>
+              Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h1 style="color:#fff;">3| Pratice</h1>
+        <div class="row">
+          <div class="col-xs-6" >
+            <i style="color:#fff;font-size:150px;" class="fa fa-road"></i>
+          </div>
+          <div class="col-xs-6" style="text-align:justify;border-left:1px solid #fff;">
+            <p>
+              Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 style="color:#fff;margin:40px 0px 70px 0px;">
+      <i>
+        Finally... the english learning experience you were looking for.
+      </i>
+    </h2>
+  </div>
+
+  <!-- CLOSE ICON -->
+  <div style="font-size:18px;cursor:pointer;position:absolute;top:70px;right:20px;">
+    <a style="color:#fff;" ng-click="showHowWorks = false">
+      <i class="glyphicon glyphicon-remove"></i>
+    </a>
+  </div>
+</div>
+
+<!-- HEADER -->
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>Welcome to English Clubs!</h1>
-    <p class="lead">Expand your world!</p>
-    <br>
-    <div class="row" style="margin:0px;">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <div class="input-group">
-          <input style="border:none;" type="text" class="form-control" placeholder="Enter a location near you">
-          <span class="input-group-btn">
-            <button class="btn btn-warning" type="button" style="font-weight:bold;">Search</button>
-          </span>
-        </div><!-- /input-group -->
+<!-- BANNER HEADER -->
+<div style="position:relative;">
+  <header class="hero-unit" id="banner">
+    <div class="container">
+      <h1>Welcome to English Clubs!</h1>
+      <p class="lead">Expand your world!</p>
+      <br>
+      <div>
+        <button ng-click="showHowWorks = true" class="btn btn-default" style="opacity:.9;font-weight:bold;color:#555;box-shadow: 0px 0px 10px 1px #000; ">How it works</button>
       </div>
-      <div class="col-md-3"></div>
+      <br><br>
+      <div class="row" style="margin:0px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="input-group" style="box-shadow: 0px 0px 10px 1px #000;">
+            <input type="text" class="form-control" placeholder="Enter a location near you">
+            <span class="input-group-btn">
+              <button class="btn btn-warning" type="button" style="font-weight:bold;">Search</button>
+            </span>
+          </div><!-- /input-group -->
+        </div>
+        <div class="col-md-3"></div>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
+</div>
 
-<div class="container">
-  <h1 style="text-align:center;">
-    Trending Clubs
+<!-- TOP LOCATION -->
+<div class="container-fluid top-locations">
+  <h1>
+    <i class="glyphicon glyphicon-map-marker"></i>
+    Trending Locations
+    <br>
+    <small>
+      Our busiest locations around the globe
+    </small>
   </h1>
 
+  <div class="row">
+    <div class="col-md-3">
+      <h2>
+        Madrid, Spain
+      </h2>
+      <hr>
+      <p>
+        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h2>
+        Moscow, Russia
+      </h2>
+      <hr>
+      <p>
+        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h2>
+        Rome, Italy
+      </h2>
+      <hr>
+      <p>
+        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h2>
+        Tokyo, Japan
+      </h2>
+      <hr>
+      <p>
+        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- MORE INFO SECTION -->
+<div class="container-fluid more-info">
+
+  <h1>
+    <i class="glyphicon glyphicon-heart"></i>
+    Our Community
+    <br>
+    <small>
+      We love to serve and better the world
+    </small>
+  </h1>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="get-social">
+        <div class="intro-box">
+          <i style="font-size:20px;"><b>#</b></i>
+          ldsEnglish
+        </div>
+      </div>
+      <div style="background:rgba(240, 173, 78,1);height:200px;padding:10px 20px;">
+        <h2>Spread the Word</h2>
+        <p>
+          We believe in a world of service. Let us serve you by sharing our native speaking skills with you. 
+          <b><i style="font-size:16px;">#</i>
+          ldsEnglish</b>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4" >
+      <div class="about-teachers">
+        <div class="intro-box">
+          Our English Leaders
+        </div>
+      </div>
+      <div style="background:rgba(0,122,135,1);height:200px;padding:10px 20px;">
+        <h2>Service Volunteers</h2>
+        <p>
+          We believe in a world of service. Let us serve you by sharing our native speaking skills with you. 
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4" >
+      <div class="about-us">
+        <div class="intro-box">
+          Who We Are
+        </div>
+      </div>
+      <div style="background:rgba(255,170,145,1);height:200px;padding:10px 20px;">
+        <h2>Spread the Word</h2>
+        <p>
+          We believe in a world of service. Let us serve you by sharing our native speaking skills with you. 
+          <b><i style="font-size:16px;">#</i>
+          ldsEnglish</b>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- TOP CLUBS -->
+<div class="container-fluid top-clubs">
+  <h1>
+    <i class="glyphicon glyphicon-book"></i>
+    Trending Clubs
+    <br>
+    <small>Our most popular clubs across the globe</small>
+  </h1>
+  <div class="row">
+    <div class="col-md-3">
+      <h2>
+        Timerazovskaya Club
+      </h2>
+      <p>
+        <i class="glyphicon glyphicon-map-marker"></i>
+        Moscow, Russia
+      </p>
+      <hr>
+      <p>
+        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h2>
+        Timerazovskaya Club
+      </h2>
+      <p>
+        <i class="glyphicon glyphicon-map-marker"></i>
+        Moscow, Russia
+      </p>
+      <hr>
+      <p>
+        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h2>
+        Timerazovskaya Club
+      </h2>
+      <p>
+        <i class="glyphicon glyphicon-map-marker"></i>
+        Moscow, Russia
+      </p>
+      <hr>
+      <p>
+        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+      </p>
+    </div>
+    <div class="col-md-3">
+      <h2>
+        Timerazovskaya Club
+      </h2>
+      <p>
+        <i class="glyphicon glyphicon-map-marker"></i>
+        Moscow, Russia
+      </p>
+      <hr>
+      <p>
+        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+      </p>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -50,8 +294,10 @@
 
 <footer class="footer">
   <div class="container">
-    <p>Angular Fullstack v2.0.13 |
-      <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-      <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-    </div>
-  </footer>
+    <hr>
+    <p>
+      Copyright © 2015 <b>LDS English Club</b>. All Rights Reserved.
+      This website is not owned by or affiliated with The Church of Jesus Christ of Latter-day Saints (sometimes called the Mormon or LDS Church). The views expressed herein do not necessarily represent the position of the Church. The views expressed by individual users are the responsibility of those users and do not necessarily represent the position of the Church. For the official Church websites, please visit LDS.org or Mormon.org.
+    </p>
+  </div>
+</footer>

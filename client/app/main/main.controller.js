@@ -3,6 +3,7 @@
 angular.module('englishClubApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
     $scope.awesomeThings = [];
+    $scope.showHowWorks = false;
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
@@ -24,4 +25,18 @@ angular.module('englishClubApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
-  });
+  }).animation('.slide', function() {
+    var NG_HIDE_CLASS = 'ng-hide';
+    return {
+        beforeAddClass: function(element, className, done) {
+            if(className === NG_HIDE_CLASS) {
+                element.slideUp(done); 
+            }
+        },
+        removeClass: function(element, className, done) {
+            if(className === NG_HIDE_CLASS) {
+                element.hide().slideDown(done);
+            }
+        }
+    }
+});;

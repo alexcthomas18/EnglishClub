@@ -1,13 +1,17 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
+<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarCtrl" style="background:rgba(255,255,255,.95);">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header" >
       <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">english-club</a>
+      <a href="/" class="navbar-brand"  style="color:#609fc7;font-weight:bold;">
+        &nbsp;
+        <i class="glyphicon glyphicon-globe" style="font-size:16px;"></i>
+        <i>LDS English Club</i>
+      </a>
     </div>
     <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">

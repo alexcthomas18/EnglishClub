@@ -17,10 +17,11 @@
     background: url("/assets/images/Rome.jpg") center center no-repeat;
     background-size:100%;
     position: relative;
-    padding: 30px 15px;
+    padding: 200px 15px;
     color: #F5F5F5;
     text-align: center;
     text-shadow: 1px 1px 1px #000000;
+    
 }
 
 .footer {

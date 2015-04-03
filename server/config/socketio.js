@@ -18,6 +18,11 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/listing_session/listing_session.socket').register(socket);
+  require('../api/listing/listing.socket').register(socket);
+  require('../api/country/country.socket').register(socket);
+  require('../api/city/city.socket').register(socket);
+  require('../api/sys_admin/sys_admin.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }
 

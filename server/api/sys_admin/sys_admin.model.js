@@ -8,4 +8,4 @@ var SysAdminSchema = new Schema({
   password: String
 });
 
-module.exports = mongoose.model('Sys_Admin', SysAdminSchema);
+module.exports = mongoose.model('SysAdmin', SysAdminSchema);

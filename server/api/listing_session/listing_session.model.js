@@ -13,4 +13,4 @@ var ListingSessionSchema = new Schema({
   deleted_at: Timestamp
 });
 
-module.exports = mongoose.model('Listing_Session', ListingSessionSchema);
+module.exports = mongoose.model('ListingSession', ListingSessionSchema);

@@ -15,7 +15,7 @@
 
 .hero-unit {
     background: url("/assets/images/Rome.jpg") center center no-repeat;
-    background-size:100%;
+    background-size: cover;
     position: relative;
     padding: 14% 0%;
     color: #F5F5F5;

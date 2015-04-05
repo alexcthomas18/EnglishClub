@@ -4,13 +4,13 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var ListingSessionSchema = new Schema({
-  start_time: Timestamp,
-  end_time: Timestamp,
+  start_time: Date,
+  end_time: Date,
   curriculum: String,
-  listing_id: ObjectId,
-  created_at: Timestamp,
-  updated_at: Timestamp,
-  deleted_at: Timestamp
+  listing_id: String,
+  created_at: Date,
+  updated_at: Date,
+  deleted_at: Date
 });
 
 module.exports = mongoose.model('ListingSession', ListingSessionSchema);

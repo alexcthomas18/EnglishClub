@@ -60,7 +60,7 @@
     position: relative;
     height:270px;
     background: url('/assets/images/mobileSocialPeople.jpg') center center no-repeat;
-    background-size: 156% auto;
+    background-size: cover;
 }
 .more-info .get-social .intro-box {
     position:absolute;
@@ -76,7 +76,7 @@
     position: relative;
     height:270px;
     background: url('/assets/images/missionaries.jpg') top center no-repeat;
-    background-size: 156% auto;
+    background-size: cover;
 }
 .more-info .about-teachers .intro-box {
     position:absolute;
@@ -92,7 +92,7 @@
     position:relative;
     height:270px;
     background: url('/assets/images/temple.jpg') center center no-repeat;
-    background-size: 136% auto;
+    background-size: cover;
 }
 .more-info .about-us .intro-box {
     position:absolute;

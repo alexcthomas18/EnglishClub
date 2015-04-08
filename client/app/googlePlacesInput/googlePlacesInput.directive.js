@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('englishClubApp')
-  .directive('googlePlacesInput', function () {
+  .directive('googlePlacesInput', function ($state) {
+  	console.log($state);
     return {
       template: '<div></div>',
       restrict: 'EA',
       link: function (scope, element, attrs) {
+      	
         var options = {
             types: [],
             componentRestrictions: {}
@@ -15,7 +17,7 @@ angular.module('englishClubApp')
         google.maps.event.addListener(scope.gPlace, 'place_changed', function() {
             //alert(element.val());
             var place = scope.gPlace.getPlace();
-            if (!place.geometry) {
+            if (!place.geometry || !place.address_components) {
 		      return;
 		    }
             console.log(place)
@@ -28,15 +30,23 @@ angular.module('englishClubApp')
             for(var i = 0; i < place.address_components.length; i += 1) {
 			  var addressObj = place.address_components[i];
 			  for(var j = 0; j < addressObj.types.length; j += 1) {
-
 			  	//COUNTRY
 			    if (addressObj.types[j] === 'country') {
-			    	country = addressObj.long_name.toLowerCase();
+			    	country = encodeURIComponent(addressObj.long_name.toLowerCase().trim());
 				    console.log(addressObj.types[j]); // confirm that this is 'country'
 				    console.log(country); // confirm that this is the country name
 			    }
+			    //CITY
+			    if (addressObj.types[j] === 'locality') {
+			    	city = encodeURIComponent(addressObj.long_name.toLowerCase().trim());
+				    console.log(addressObj.types[j]); // confirm that this is 'country'
+				    console.log(city); // confirm that this is the country name
+			    }
 			  }
 			}
+
+			$state.go('search',{country:country,city:city,lat:lat,lng:lng});
+
         });
       }
     };

@@ -4,7 +4,7 @@ angular.module('englishClubApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('search', {
-      	url: '/search',
+      	url: '/:country/:city?lat&lng',
         templateUrl: 'app/search/search.html',
         controller: 'SearchCtrl'
       });

@@ -2,7 +2,7 @@
 
 angular.module('englishClubApp')
   .directive('googlePlacesInput', function ($state) {
-  	console.log($state);
+  	
     return {
       template: '<div></div>',
       restrict: 'EA',

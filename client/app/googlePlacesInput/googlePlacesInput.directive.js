@@ -28,14 +28,18 @@ angular.module('englishClubApp')
             console.log(lat);
             console.log(lng);
             for(var i = 0; i < place.address_components.length; i += 1) {
+              
 			  var addressObj = place.address_components[i];
+
 			  for(var j = 0; j < addressObj.types.length; j += 1) {
+
 			  	//COUNTRY
 			    if (addressObj.types[j] === 'country') {
 			    	country = encodeURIComponent(addressObj.long_name.toLowerCase().trim());
 				    console.log(addressObj.types[j]); // confirm that this is 'country'
 				    console.log(country); // confirm that this is the country name
 			    }
+
 			    //CITY
 			    if (addressObj.types[j] === 'locality') {
 			    	city = encodeURIComponent(addressObj.long_name.toLowerCase().trim());

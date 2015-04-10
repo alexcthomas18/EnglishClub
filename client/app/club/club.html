@@ -1,9 +1,19 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
+<div class="container" style="padding-top:100px;">
 	<div class="col-md-12">
 	This is the club view.
 	{{stateParams}}
 	</div>
 </div>
-
+<hr>
+{{persons}}
+<hr>
+<div ng-repeat="c in listing.classes">
+	<h1>{{c}}</h1>
+	<input ng-model="c.title">
+	<hr>
+</div>
+<hr>
+<button ng-click="addSesh()">Add Sesh</button>
+{{listing}}

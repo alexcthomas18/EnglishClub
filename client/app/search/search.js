@@ -8,4 +8,5 @@ angular.module('englishClubApp')
         templateUrl: 'app/search/search.html',
         controller: 'SearchCtrl'
       });
+
   });

@@ -1,10 +1,20 @@
 'use strict';
 
 angular.module('englishClubApp')
-  .controller('SearchCtrl', function ($scope,$stateParams) {
+  .controller('SearchCtrl', function ($scope,$stateParams,$http) {
     $scope.message = 'Hello';
     $scope.stateParams = $stateParams;
     $scope.examples = [1,2,3,4,5,6,7,8];
+    $http.get('/api/listings').
+      success(function(data, status, headers, config) {
+        $scope.clubs = data;
+        console.log(data)
+      }).
+      error(function(data, status, headers, config) {
+        console.log(data);
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+      });
 
     console.log($stateParams.lat);
     console.log($stateParams.lng);

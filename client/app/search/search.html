@@ -2,17 +2,32 @@
 <div class="container-fluid" style="padding-top:70px;background:#f9f9f9;">
 	<div class="row" style="position:relative;">
 		<div class="col-md-7" style="padding-left:0px;">
-			<div class="col-md-6" ng-repeat="ex in examples">
-				<div style="background:#fff;padding:10px 15px;margin-bottom:20px;">
+			<div class="col-md-6" ng-repeat="club in clubs" >
+				<div style="background:#fff;padding:10px 15px;margin-bottom:20px;border:1px solid #f0f0f0;min-height:350px;">
 					<a ui-sref='club({country: "russia", city: "moscow",club:"rechnoi"})'>
 						<h1 style="margin-top:10px;">
 							<i class="fa fa-group"></i>
-							Rechnoi
+							{{club.title}}
+							<br>
+							<small>
+								{{club.subtitle}}
+							</small>
 						</h1>
 					</a>
 					<hr>
+						<p>
+							Start Time: 
+							{{club.classes[0].start_time}}
+							<br>
+							End Time:
+							{{club.classes[0].end_time}}
+						</p>
+						<p>
+							{{club.location}}
+						</p>
+					<hr>
 					<p style="color:#777;">
-						Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee.
+						{{club.description}}
 					</p>
 				</div>
 			</div>

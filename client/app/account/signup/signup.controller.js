@@ -6,6 +6,7 @@ angular.module('englishClubApp')
     $scope.errors = {};
 
     $scope.register = function(form) {
+      
       $scope.submitted = true;
 
       if(form.$valid) {

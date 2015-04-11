@@ -1,42 +1,65 @@
 <!-- HEADER -->
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="container" style="padding-top:50px;">
-	<form>
+	<form class="form" name="form" ng-submit="submitListing(form)" novalidate>
 		<h1>Submit a Club</h1>
 		<hr>
-		<div class="form-group col-md-6" style="padding-left:0px;">
-			{{listing.title = title}}
-			<label>Title</label>
-    		<input ng-model="title" class="form-control" placeholder="Enter Title">
+
+		<div class="form-group col-md-6" style="padding-left:0px;" ng-class="{ 'has-success': form.title.$valid && submitted,'has-error': form.title.$invalid && submitted }">
+
+			<label class="control-label">
+				Title
+				<i ng-show="form.title.$error.required && submitted" >
+	            	- A title is required
+	        	</i>
+			</label>
+    		<input type="text" name="title" ng-model="listing.title" class="form-control" placeholder="Enter Title" required/>
 		</div>
+
 		<div class="form-group col-md-6" style="padding-right:0px;">
-			{{listing.subtitle = subtitle}}
-			<label>Subtitle</label>
-    		<input ng-model="subtitle" class="form-control" placeholder="Enter Subtitle">
+			<label  class="control-label">Subtitle</label>
+    		<input ng-model="listing.subtitle" class="form-control" placeholder="Enter Subtitle">
 		</div>
 		</hr>
 		
 		<hr>
 
-		<div class="form-group">
-			<label>Address</label>
-		    <input type="text" class="form-control" placeholder="Enter the Address of the class location" id="googleGetLocation">
+		<div class="form-group" ng-class="{ 'has-success': form.location.$valid && submitted,'has-error': form.location.$invalid && submitted }">
+			<label class="control-label">
+				Address
+				<i ng-show="form.location.$error.required && submitted" >
+	            	- An address is required
+	        	</i>
+			</label>
+		    <input ng-model="listing.location" name="location" type="text" class="form-control" placeholder="Enter the Address of the class location" id="googleGetLocation" required/>
 		</div>
 		
-		<div class="form-group">
-			{{listing.description = description}}
-			<label>Description
+		<div class="form-group" ng-class="{ 'has-success': form.description.$valid && submitted,'has-error': form.description.$invalid && submitted }">
+			<label class="control-label">
+				Description
+				<i ng-show="form.description.$error.required && submitted" >
+	            	- A description is required
+	        	</i>
 		  	</label>
-			<textarea ng-model="description" class="form-control" rows="3" placeholder="Give a short desciption of your class."></textarea>
+			<textarea name="description" ng-model="listing.description" class="form-control" rows="3" placeholder="Give a short desciption of your class." required></textarea>
 		</div>
 		<hr>
 		<div class="row">
 			<div class="col-md-4" style="border:1px solid #e0e0e0;" ng-repeat="class in listing.classes">
-				<h2 style="text-align:center;">Time Slot</h2>
+
+				<h2 style="text-align:center;">
+					<i class="glyphicon glyphicon-time"></i>
+					Time Slot
+				</h2>
 				<hr>
 				<!--day of the week-->
-				<div class="form-group">
-					<select class="form-control" ng-model="class.day">
+				<div class="form-group" ng-class="{ 'has-success': form.day{{$index}}.$valid && submitted,'has-error': form.day{{$index}}.$invalid && submitted }">
+
+					<p class="help-block" ng-show="form.day{{$index}}.$error.required && submitted">
+		            	A day of the week is required
+		          	</p>
+
+					<select name="day{{$index}}" class="form-control" ng-model="class.day" required>
 						<option value="">Select a Day</option>
 						<option value="Monday">Monday</option>
 						<option value="Tuesday">Tuesday</option>
@@ -48,22 +71,33 @@
 					</select>
 				</div>
 				<!-- starting time div -->
-				<div class="col-xs-6">
-					<label class="control-label"> Starting Time
+				<div class="form-group col-xs-6" ng-class="{ 'has-success': form.start_time{{$index}}.$valid && submitted,'has-error': form.start_time{{$index}}.$invalid && submitted }">
+					
+					<label class="control-label"> Start Time
 				  	</label>
-					<timepicker ng-model="class.start_time" ng-change="changed(  )" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+					<timepicker name="start_time{{$index}}" ng-model="class.start_time" ng-change="changed(  )" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
+					
 				</div>
 				<!-- ending time div -->
-				<div class="col-xs-6">
-				  	<label class="control-label"> Ending Time
+				<div class="form-group col-xs-6" ng-class="{ 'has-success': form.end_time{{$index}}.$valid && submitted,'has-error': form.end_time{{$index}}.$invalid && submitted }">
+				  	<label class="control-label"> End Time
 				  	</label>
-				  <timepicker ng-model="class.end_time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+				  <timepicker name="end_time{{$index}}" ng-model="class.end_time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
 				</div>
-				<div class="form-group">
-					<label> Curriculum
+				<div class="form-group" ng-class="{ 'has-success': form.curriculum{{$index}}.$valid && submitted,'has-error': form.curriculum{{$index}}.$invalid && submitted }">
+					<label class="control-label">
+						Curriculum
+						<i ng-show="form.curriculum{{$index}}.$error.required && submitted" >
+			            	- A curriculum is required
+			        	</i>
 				  	</label>
-				  	{{listing.classes.curriculum = curriculum}}
-					<textarea ng-model="class.curriculum" class="form-control" rows="3" placeholder="Give a short overview of what you will teach."></textarea>
+					<textarea name="curriculum{{$index}}" ng-model="class.curriculum" class="form-control" rows="3" placeholder="Give a short overview of what you will teach." required></textarea>
+				</div>
+
+				<div ng-click="$parent.removeTimeSlot($index)" ng-if="!$first" style="position:absolute;top:10px;right:15px;cursor:pointer;">
+					<a>
+						<i class="glyphicon glyphicon-remove"></i>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -71,12 +105,18 @@
 
 		<br>
 		<div class="form-group">
-			<button ng-click="addTimeSlot()" class="btn btn-warning">Add Another Time Slot</button>
+			<button type="button" ng-click="addTimeSlot()" class="btn btn-warning">
+				<i class="glyphicon glyphicon-plus"></i>
+				Time Slot
+			</button>
 		</div>
 		<hr>
 		
 		<div class="form-group">
-			<button ng-click="submitListing()" class="btn btn-primary">Submit to Admin</button>
+			<button type="submit" class="btn btn-primary btn-lg">
+				<i class="glyphicon glyphicon-download"></i>
+				Submit Club
+			</button>
 		</div>
 	
 	</form>

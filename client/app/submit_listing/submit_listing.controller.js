@@ -6,9 +6,10 @@ angular.module('englishClubApp')
     $scope.message = 'is this wrking';
     $scope.stateParams = $stateParams;
     $scope.listing = {
-    	title:"title",
-    	subtitle: "subtitle",
-    	description: "description",
+    	title:"",
+    	subtitle: "",
+      location: "",
+    	description: "",
     	classes: [
         {
       		day:"",
@@ -66,18 +67,29 @@ angular.module('englishClubApp')
         });
     };
 
-    $scope.submitListing = function() {
-      $http.post('/api/listings', $scope.listing).
-      success(function(data, status, headers, config) {
-        console.log(data);
-        // this callback will be called asynchronously
-        // when the response is available
-      }).
-      error(function(data, status, headers, config) {
-        console.log(data);
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-      });
+    $scope.removeTimeSlot = function(index) {
+      $scope.listing.classes.splice(index,1);
+    }
+
+
+    $scope.submitListing = function(form) {
+
+      $scope.submitted = true;
+
+      if(form.valid) {
+        
+        $http.post('/api/listings', $scope.listing).
+        success(function(data, status, headers, config) {
+          console.log(data);
+          // this callback will be called asynchronously
+          // when the response is available
+        }).
+        error(function(data, status, headers, config) {
+          console.log(data);
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+        });
+      }
     }
 
     $scope.mytime = new Date();

@@ -1,0 +1,10 @@
+.club-bg {
+    background: url("/assets/images/classroom.jpg") center center no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 14% 0%;
+    color: #F5F5F5;
+    text-align: center;
+    text-shadow: 1px 1px 0px #000,0px 0px 10px #000;
+    
+}

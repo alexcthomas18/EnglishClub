@@ -6,6 +6,8 @@ var controller = require('./listing.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
+router.get('/approved', controller.approved);
+router.get('/needsApproval', controller.needsApproval);
 router.get('/:id', controller.show);
 router.post('/', controller.create);
 router.put('/:id', controller.update);

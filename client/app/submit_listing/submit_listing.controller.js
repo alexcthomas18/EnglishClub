@@ -76,8 +76,12 @@ angular.module('englishClubApp')
 
       $scope.submitted = true;
 
-      if(form.valid) {
+      console.log(form);
+
+      if(form.$valid) {
         
+        alert("valid");
+
         $http.post('/api/listings', $scope.listing).
         success(function(data, status, headers, config) {
           console.log(data);

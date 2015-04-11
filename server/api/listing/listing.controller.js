@@ -11,6 +11,22 @@ exports.index = function(req, res) {
   });
 };
 
+// Get list of approved listings
+exports.approved = function(req, res) {
+  Listing.find({ 'approved': 1 },function (err, listings) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, listings);
+  });
+};
+
+// Get list of listings for approval
+exports.needsApproval = function(req, res) {
+  Listing.find({ 'approved': 0 },function (err, listings) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, listings);
+  });
+};
+
 // Get a single listing
 exports.show = function(req, res) {
   Listing.findById(req.params.id, function (err, listing) {

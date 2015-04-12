@@ -101,6 +101,40 @@ Listing.find({}).remove(function() {
       end_time: "7pm",
       curriculum: "This is a curriculum"
     }]
+  },{
+    title: 'Novokuznetskaya',
+    subtitle: 'This is a subtitle',
+    description: 'This is a description',
+    location: 'Pereulok blah blah blah Moscow, Russia',
+    lat: '55.7360725',
+    lng: '37.61863310000004',
+    city: 'Moscow',
+    country: 'Russia',
+    clicks: 17,
+    approved: 0,
+    classes: [{
+      day: "Wednesday",
+      start_time: "6pm",
+      end_time: "7pm",
+      curriculum: "This is a curriculum"
+    }]
+  },{
+    title: 'Rechnoi',
+    subtitle: 'This is a subtitle',
+    description: 'This is a description',
+    location: 'Pereulok blah blah blah Moscow, Russia',
+    lat: '55.7360725',
+    lng: '37.65993310000004',
+    city: 'Moscow',
+    country: 'Russia',
+    clicks: 17,
+    approved: 0,
+    classes: [{
+      day: "Wednesday",
+      start_time: "6pm",
+      end_time: "7pm",
+      curriculum: "This is a curriculum"
+    }]
   }, function() {
       console.log('finished populating listings');
     }

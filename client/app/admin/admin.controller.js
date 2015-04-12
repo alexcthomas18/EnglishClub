@@ -7,30 +7,27 @@ angular.module('englishClubApp')
     $scope.users = User.query();
 
     $scope.approved=[];
-    $http.get('/api/listings/approved').
-    success(function(data, status, headers, config) {
-      $scope.approved = data;
-      // this callback will be called asynchronously
-      // when the response is available
-    }).
-    error(function(data, status, headers, config) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
-    });
+    function getApproved() {
+      $http.get('/api/listings/approved').
+      success(function(data, status, headers, config) {
+        $scope.approved = data;
+      }).
+      error(function(data, status, headers, config) {
+      });
+    }
+    getApproved();
+
     $scope.needsApproval=[];
-    $http.get('/api/listings/needsApproval').
-    success(function(data, status, headers, config) {
-      //console.log(data);
-      $scope.needsApproval = data;
-      //loadMaps();
-      //google.maps.event.addDomListener(window, 'load', loadMaps());
-      // this callback will be called asynchronously
-      // when the response is available
-    }).
-    error(function(data, status, headers, config) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
-    });
+    function getNeedsApproval() {
+      $http.get('/api/listings/needsApproval').
+      success(function(data, status, headers, config) {
+        $scope.needsApproval = data;
+      }).
+      error(function(data, status, headers, config) {
+      });
+    }
+    getNeedsApproval();
+      
 
     $scope.delete = function(user) {
       User.remove({ id: user._id });
@@ -42,7 +39,20 @@ angular.module('englishClubApp')
     };
 
     $scope.approveClub = function(club) {
-      alert(1);
+      club.approved = 1;
+      //club.classes[0].day = "blurpity blurp";
+      console.log('/api/listings/'+club._id);
+      console.log(club);
+      $http.put('/api/listings/'+club._id, club).
+      success(function(data, status, headers, config) {
+        console.log(data);
+        getApproved();
+        getNeedsApproval();
+      }).
+      error(function(data, status, headers, config) {
+        
+      });
+      
     }
   
     $scope.rejectClub = function(club) {

@@ -20,8 +20,10 @@ angular.module('englishClubApp')
     $scope.needsApproval=[];
     $http.get('/api/listings/needsApproval').
     success(function(data, status, headers, config) {
-      console.log(data);
+      //console.log(data);
       $scope.needsApproval = data;
+      //loadMaps();
+      //google.maps.event.addDomListener(window, 'load', loadMaps());
       // this callback will be called asynchronously
       // when the response is available
     }).
@@ -38,4 +40,14 @@ angular.module('englishClubApp')
         }
       });
     };
-  });
+
+    $scope.approveClub = function(club) {
+      alert(1);
+    }
+  
+    $scope.rejectClub = function(club) {
+      alert(1)
+    }
+});
+
+

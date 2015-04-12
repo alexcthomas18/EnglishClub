@@ -38,6 +38,9 @@
     padding: 0.2em 0;
 }
 
+html,body {
+    height:100%;
+}
 
 
 /*BOOTSTRAP OVERWRITE*/

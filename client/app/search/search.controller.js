@@ -8,6 +8,7 @@ angular.module('englishClubApp')
     $http.get('/api/listings').
       success(function(data, status, headers, config) {
         $scope.clubs = data;
+        google.maps.event.addDomListener(window, 'load', initialize());
         console.log(data)
       }).
       error(function(data, status, headers, config) {
@@ -19,7 +20,7 @@ angular.module('englishClubApp')
     console.log($stateParams.lat);
     console.log($stateParams.lng);
 
-    function initialize() {
+  function initialize() {
     	console.log($stateParams);
     	console.log("hello");
 	  var mapProp = {
@@ -27,10 +28,20 @@ angular.module('englishClubApp')
 	    zoom:12,
 	    mapTypeId:google.maps.MapTypeId.ROADMAP
 	  };
-	  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+	  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+    var markers = [];
+
+    for(var i=0;i<$scope.clubs.length;i++) {
+      markers[i] = new google.maps.Marker({
+        position: new google.maps.LatLng($scope.clubs[i].lat,$scope.clubs[i].lng),
+        map: map,
+      });
+    }
+
 	}
 
-	google.maps.event.addDomListener(window, 'load', initialize());
+	
 
 
   });

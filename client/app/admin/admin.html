@@ -39,9 +39,13 @@
                   <i class="glyphicon glyphicon-thumbs-up"></i>
                   Approve
                 </button>
+                <button ng-click="editClub(club)" type="button" class="btn btn-info">
+                  <i class="glyphicon glyphicon-pencil"></i>
+                  Edit
+                </button>
                 <button ng-click="rejectClub(club)" type="button" class="btn btn-danger">
-                  <i class="glyphicon glyphicon-thumbs-down"></i>
-                  Reject
+                  <i class="glyphicon glyphicon-trash"></i>
+                  Delete
                 </button>
               </p>
             </div>
@@ -95,6 +99,17 @@
               <hr>
               <p>
                 {{club.description}}
+              </p>
+              <hr>
+              <p>
+                <button ng-click="editClub(club)" type="button" class="btn btn-info">
+                  <i class="glyphicon glyphicon-pencil"></i>
+                  Edit
+                </button>
+                <button ng-click="rejectClub(club)" type="button" class="btn btn-danger">
+                  <i class="glyphicon glyphicon-trash"></i>
+                  Delete
+                </button>
               </p>
             </div>
             <div class="col-md-6" style="padding-right:0px;">

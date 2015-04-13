@@ -15,6 +15,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
+.pac-container {
+    z-index: 10000 !important;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';

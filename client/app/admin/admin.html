@@ -3,6 +3,7 @@
 <div class="container" style="padding-top: 50px;">
 
   <h1>
+    <hr>
     <i class="glyphicon glyphicon-book"></i>
     Clubs
   </h1>
@@ -222,7 +223,8 @@
                 - An address is required
             </i>
       </label>
-        <input ng-model="listing.location" name="location" type="text" class="form-control" placeholder="Enter the Address of the class location" id="googleGetLocation" required/>
+        <input ng-model="listing.location" name="location" type="text" class="form-control" placeholder="Enter the Address of the class location"
+        redirect="false" google-places-input required/>
     </div>
     
     <div class="form-group" ng-class="{ 'has-success': form.description.$valid && submitted,'has-error': form.description.$invalid && submitted }">

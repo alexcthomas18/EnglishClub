@@ -1,6 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container" style="padding-top: 50px;">
+
   <h1>
     <i class="glyphicon glyphicon-book"></i>
     Clubs
@@ -31,7 +32,8 @@
               </p>
               <hr>
               <p>
-                {{club.description}}
+                {{club.description | limitTo : 250 : 0}}
+                {{club.description.length > 247 ? "..." : "" }}
               </p>
               <hr>
               <p>
@@ -39,11 +41,11 @@
                   <i class="glyphicon glyphicon-thumbs-up"></i>
                   Approve
                 </button>
-                <button ng-click="editClub(club)" type="button" class="btn btn-info">
+                <button ng-click="loadUpdateBox(club)" type="button" class="btn btn-info">
                   <i class="glyphicon glyphicon-pencil"></i>
                   Edit
                 </button>
-                <button ng-click="rejectClub(club)" type="button" class="btn btn-danger">
+                <button ng-click="deleteClub(club)" type="button" class="btn btn-danger">
                   <i class="glyphicon glyphicon-trash"></i>
                   Delete
                 </button>
@@ -51,25 +53,29 @@
             </div>
             <div class="col-md-6" style="padding-right:0px;">
               <h4 style="margin-top:0px;">
-                <i class="glyphicon glyphicon-time"></i>
-                Time Slots ({{club.classes.length}})
+                <i class="glyphicon glyphicon-calendar"></i>
+                Schedule ({{club.classes.length}})
               </h4>
               <hr>
               <div class="row" ng-repeat="class in club.classes">
-                <div class="col-md-5" style="padding-left:0px;">
+                <div class="col-md-5" style="padding-left:0px;text-align:center;">
+                  <i class="glyphicon glyphicon-time"></i>
                   <strong>{{class.day}}s</strong>
+                  <br>
+                  {{$parent.getClubTime(class.start_time)}} - {{$parent.getClubTime(class.end_time)}}
                 </div>
                 <div class="col-md-7" style="padding-right:0px;">
                   <strong>Curriculum</strong>
                   <p>
-                    {{class.curriculum}}
+                    {{class.curriculum | limitTo : 75 : 0}}
+                    {{class.curriculum.length > 72 ? "..." : "" }}
                   </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-md-4" style="padding:0px;border-left:1px solid #e9e9e9;">
-            <div style="height:250px;width:100%;" lat="{{club.lat}}" lng="{{club.lng}}" google-map-display>
+            <div style="height:325px;width:100%;" lat="{{club.lat}}" lng="{{club.lng}}" google-map-display>
             </div>
           </div>
         </li>
@@ -98,15 +104,16 @@
               </p>
               <hr>
               <p>
-                {{club.description}}
+                {{club.description | limitTo : 250 : 0}}
+                {{club.description.length > 247 ? "..." : "" }}
               </p>
               <hr>
               <p>
-                <button ng-click="editClub(club)" type="button" class="btn btn-info">
+                <button ng-click="loadUpdateBox(club)" type="button" class="btn btn-info">
                   <i class="glyphicon glyphicon-pencil"></i>
                   Edit
                 </button>
-                <button ng-click="rejectClub(club)" type="button" class="btn btn-danger">
+                <button ng-click="deleteClub(club)" type="button" class="btn btn-danger">
                   <i class="glyphicon glyphicon-trash"></i>
                   Delete
                 </button>
@@ -114,25 +121,29 @@
             </div>
             <div class="col-md-6" style="padding-right:0px;">
               <h4 style="margin-top:0px;">
-                <i class="glyphicon glyphicon-time"></i>
-                Time Slots ({{club.classes.length}})
+                <i class="glyphicon glyphicon-calendar"></i>
+                Schedule ({{club.classes.length}})
               </h4>
               <hr>
               <div class="row" ng-repeat="class in club.classes">
-                <div class="col-md-5" style="padding-left:0px;">
+                <div class="col-md-5" style="padding-left:0px;text-align:center;">
+                  <i class="glyphicon glyphicon-time"></i>
                   <strong>{{class.day}}s</strong>
+                  <br>
+                  {{$parent.getClubTime(class.start_time)}} - {{$parent.getClubTime(class.end_time)}}
                 </div>
                 <div class="col-md-7" style="padding-right:0px;">
                   <strong>Curriculum</strong>
                   <p>
-                    {{class.curriculum}}
+                    {{class.curriculum | limitTo : 75 : 0}}
+                    {{class.curriculum.length > 72 ? "..." : "" }}
                   </p>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-md-4" style="padding:0px;border-left:1px solid #e9e9e9;">
-            <div style="height:250px;width:100%;" lat="{{club.lat}}" lng="{{club.lng}}" google-map-display>
+            <div style="height:325px;width:100%;" lat="{{club.lat}}" lng="{{club.lng}}" google-map-display>
             </div>
           </div>
         </li>
@@ -164,6 +175,153 @@
   </div>
 </div>
 
+<!-- UPDATE MODAL -->
+<script type="text/ng-template" id="myModalContent.html">
+<div class="modal-header">
+    <h3 class="modal-title">
+      Edit Club: {{listing.title}}
+
+      <button class="btn btn-warning pull-right" ng-click="cancelClubEdit()" style="margin:0px 5px;">
+        <i class="glyphicon glyphicon-remove"></i>
+        Cancel
+      </button>
+      <button form="form" class="btn btn-primary pull-right" ng-click="saveClubEdit(form)" style="margin:0px 5px;">
+        <i class="glyphicon glyphicon-download"></i>
+        Save
+      </button>
+
+    </h3>
+</div>
+<div class="modal-body" style="padding:10px 40px;">
+
+  <form class="form" name="form" novalidate>
+    
+    <div class="form-group col-md-6" style="padding-left:0px;" ng-class="{ 'has-success': form.title.$valid && submitted,'has-error': form.title.$invalid && submitted }">
+
+      <label class="control-label">
+        Title
+        <i ng-show="form.title.$error.required && submitted" >
+                - A title is required
+            </i>
+      </label>
+        <input type="text" name="title" ng-model="listing.title" class="form-control" placeholder="Enter Title" required/>
+    </div>
+
+    <div class="form-group col-md-6" style="padding-right:0px;">
+      <label  class="control-label">Subtitle</label>
+        <input ng-model="listing.subtitle" class="form-control" placeholder="Enter Subtitle">
+    </div>
+    </hr>
+    
+    <hr>
+
+    <div class="form-group" ng-class="{ 'has-success': form.location.$valid && submitted,'has-error': form.location.$invalid && submitted }">
+      <label class="control-label">
+        Address
+        <i ng-show="form.location.$error.required && submitted" >
+                - An address is required
+            </i>
+      </label>
+        <input ng-model="listing.location" name="location" type="text" class="form-control" placeholder="Enter the Address of the class location" id="googleGetLocation" required/>
+    </div>
+    
+    <div class="form-group" ng-class="{ 'has-success': form.description.$valid && submitted,'has-error': form.description.$invalid && submitted }">
+      <label class="control-label">
+        Description
+        <i ng-show="form.description.$error.required && submitted" >
+                - A description is required
+            </i>
+        </label>
+      <textarea name="description" ng-model="listing.description" class="form-control" rows="3" placeholder="Give a short desciption of your class." required></textarea>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-4" style="border:1px solid #e0e0e0;" ng-repeat="class in listing.classes">
+
+        <h2 style="text-align:center;">
+          <i class="glyphicon glyphicon-time"></i>
+          Time Slot
+        </h2>
+        <hr>
+        <!--day of the week-->
+        <div class="form-group" ng-class="{ 'has-success': form.day{{$index}}.$valid && submitted,'has-error': form.day{{$index}}.$invalid && submitted }">
+
+          <p class="help-block" ng-show="form.day{{$index}}.$error.required && submitted">
+                  A day of the week is required
+                </p>
+
+          <select name="day{{$index}}" class="form-control" ng-model="class.day" required>
+            <option value="">Select a Day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+        <!-- starting time div -->
+        <div class="form-group" ng-class="{ 'has-success': form.start_time{{$index}}.$valid && submitted,'has-error': form.start_time{{$index}}.$invalid && submitted }">
+          
+          <label class="control-label"> Start Time
+            </label>
+          <timepicker name="start_time{{$index}}" ng-model="class.start_time" ng-change="changed(  )" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
+          
+        </div>
+        <!-- ending time div -->
+        <div class="form-group" ng-class="{ 'has-success': form.end_time{{$index}}.$valid && submitted,'has-error': form.end_time{{$index}}.$invalid && submitted }">
+            <label class="control-label"> End Time
+            </label>
+          <timepicker name="end_time{{$index}}" ng-model="class.end_time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
+        </div>
+        <div class="form-group" ng-class="{ 'has-success': form.curriculum{{$index}}.$valid && submitted,'has-error': form.curriculum{{$index}}.$invalid && submitted }">
+          <label class="control-label">
+            Curriculum
+            <i ng-show="form.curriculum{{$index}}.$error.required && submitted" >
+                    - A curriculum is required
+                </i>
+            </label>
+          <textarea name="curriculum{{$index}}" ng-model="class.curriculum" class="form-control" rows="3" placeholder="Give a short overview of what you will teach." required></textarea>
+        </div>
+
+        <div ng-click="$parent.removeTimeSlot($index)" ng-if="!$first" style="position:absolute;top:10px;right:15px;cursor:pointer;">
+          <a>
+            <i class="glyphicon glyphicon-remove"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <button type="button" ng-click="addTimeSlot()" class="btn btn-warning">
+        <i class="glyphicon glyphicon-plus"></i>
+        Time Slot
+      </button>
+    </div>
+  
+  </form>
+
+</div>
+<div class="modal-footer">
+  <button form="form" class="btn btn-primary" ng-click="saveClubEdit(form)">
+    <i class="glyphicon glyphicon-download"></i>
+    Save
+  </button>
+  <button class="btn btn-warning" ng-click="cancelClubEdit()">
+    <i class="glyphicon glyphicon-remove"></i>
+    Cancel
+  </button>
+</div>
+</script>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="updateListingBox">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <div ng-include="'components/footer/footer.html'"></div>

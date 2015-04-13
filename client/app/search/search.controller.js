@@ -34,7 +34,7 @@ angular.module('englishClubApp')
       content += "<p>"+$scope.clubs[i].subtitle+"</p>";
       
       for(var j=0;j<$scope.clubs[i].classes.length;j++) {
-        content += "<p><strong>"+$scope.clubs[i].classes[j].day+"</strong> ";
+        content += "<p><strong>"+$scope.clubs[i].classes[j].day+"s</strong> ";
         content += $scope.clubs[i].classes[j].start_time+" - ";
         content += $scope.clubs[i].classes[j].end_time+"</p>";
       }

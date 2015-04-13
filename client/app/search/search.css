@@ -10,7 +10,7 @@
 	text-decoration: none;
 }
 .searchBox h1, .searchBox .classes {
-	color:#777;
+	color:#555;
 }
 .searchBox:hover h1,.searchBox:hover .classes {
 	color: #333;

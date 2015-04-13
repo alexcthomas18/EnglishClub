@@ -60,13 +60,21 @@ exports.create = function(req, res) {
 
 // Updates an existing listing in the DB.
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
+  if(req.body._id) { 
+    delete req.body._id; 
+  }
   Listing.findById(req.params.id, function (err, listing) {
-    if (err) { return handleError(res, err); }
-    if(!listing) { return res.send(404); }
-    var updated = _.merge(listing, req.body);
+    if (err) { 
+      return handleError(res, err); 
+    }
+    if(!listing) { 
+      return res.send(404); 
+    }
+    var updated = _.extend(listing, req.body);
     updated.save(function (err) {
-      if (err) { return handleError(res, err); }
+      if (err) { 
+        return handleError(res, err); 
+      }
       return res.json(200, listing);
     });
   });

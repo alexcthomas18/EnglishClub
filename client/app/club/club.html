@@ -9,22 +9,35 @@
 <div class="container" >
 <h1>
 	<i class="glyphicon glyphicon-map-marker"></i>
-	Club Title Goes Here
+		{{listing.title}}
 	<br>
 	<small>
-		Subtitle goes here
+		{{listing.subtitle}}
 	</small>
 </h1>
 <p>
-	The Address Goes Here
+	{{listing.location}}
 </p>
 </div>
 <div style="background:#f9f9f9;border-top:1px solid #e9e9e9;">
 	<div class="container" style="padding:50px 0px 50px 0px">
 		<div class="row">
 			<div class="col-md-6">
+				<h2>Class Times</h2>
+				<br>
+				<p ng-repeat="class in listing.classes" >
+		            <i class="glyphicon glyphicon-time"></i>
+		            <strong>
+		              {{class.day}}s
+		            </strong>
+		            {{class.start_time_str}} 
+		            - 
+		            {{class.end_time_str}}
+		        </p>
+		        <br><br>
+		        <h3>Club Description</h3>
 				<p>
-					Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+					{{listing.description}}
 				</p>
 			</div>
 		</div>

@@ -1,45 +1,44 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="container-fluid" style="padding-top:70px;background:#f9f9f9;">
+	
 	<div class="row" style="position:relative;">
+		
 		<div class="col-md-7" style="padding-left:0px;">
 			<div class="col-md-6" ng-repeat="club in clubs" >
-				<div style="background:#fff;padding:10px 15px;margin-bottom:20px;border:1px solid #e9e9e9;min-height:350px;">
+				<div style="background:#fff;padding:10px 15px;margin-bottom:20px;border:1px solid #e9e9e9;min-height:350px;" ng-mouseenter="$parent.toggleBounce(club.mapMarker)" ng-mouseleave="$parent.toggleBounce(club.mapMarker)">
 					<a ui-sref='club({country: "russia", city: "moscow",club:"rechnoi"})'>
 						<h1 style="margin-top:10px;">
-							<i class="fa fa-group"></i>
+							<!-- <i class="fa fa-group"></i> -->
 							{{club.title}}
-							<br>
-							<small>
-								{{club.subtitle}}
-							</small>
 						</h1>
 					</a>
+					<p>
+						<i class="glyphicon glyphicon-map-marker"></i>
+						{{club.location}}
+					</p>
 					<hr>
-						<p>
-							Start Time: 
-							{{club.classes[0].start_time}}
-							<br>
-							End Time:
-							{{club.classes[0].end_time}}
-						</p>
-						<p>
-							{{club.location}}
-						</p>
-					<hr>
-					<p style="color:#777;">
-						{{club.description}}
+					<p ng-repeat="class in club.classes">
+						<i class="glyphicon glyphicon-time"></i>
+						<strong>
+							{{class.day}}s
+						</strong>
+						{{class.start_time}}
+						-
+						{{class.end_time}}
+					</p>
+					<p style="color:#777;text-align:justify;">
+						{{club.description | limitTo : 300 : 0}}
 					</p>
 				</div>
 			</div>	
 		</div>
+
+
+		<!-- MAP -->
 		<div class="col-md-5" style="position:fixed;top:50px;right:0px;height:100%;border-left:1px solid #f0f0f0;padding:0px;">
 			<div id="googleMap" style="width:100%;height:100%;">
 			</div>
 		</div>
+
 	</div>
 </div>
-<div class="col-md-12">
-This is the search view.
-{{stateParams}}
-</div>
-

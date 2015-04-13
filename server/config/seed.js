@@ -107,7 +107,7 @@ Listing.find({}).remove(function() {
     description: 'Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant. Wafer marshmallow halvah. Lemon drops pie chocolate bar jelly wafer pastry. Gummies tiramisu candy lemon drops toffee oat cake sweet. Carrot cake cotton candy toffee pie cake. Cake chocolate cake topping marzipan tart chocolate bar gummies. Apple pie sugar plum jujubes ice cream. Macaroon gingerbread ice cream topping gummi bears sweet roll lollipop.',
     location: 'Cookie Ln 85 N, Moscow, Russia',
     lat: '55.7460725',
-    lng: '37.58863310000004',
+    lng: '37.67763310000004',
     city: 'Moscow',
     country: 'Russia',
     clicks: 1,

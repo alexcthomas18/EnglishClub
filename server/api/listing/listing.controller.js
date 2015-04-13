@@ -5,7 +5,21 @@ var Listing = require('./listing.model');
 
 // Get list of listings
 exports.index = function(req, res) {
-  Listing.find(function (err, listings) {
+  
+  var listings = Listing.find({});
+  
+  //REQ QUERY
+  if(req.query.approved) {
+    listings.where('approved').equals(req.query.approved);
+  }
+  if(req.query.limit) {
+    listings.limit(req.query.limit);
+  }
+  if(req.query.sort) {
+    listings.sort(req.query.sort);
+  }
+  
+  listings.exec(function (err, listings) {
     if(err) { return handleError(res, err); }
     return res.json(200, listings);
   });

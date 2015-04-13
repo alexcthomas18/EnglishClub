@@ -22,9 +22,9 @@ var ListingSchema = new Schema({
     curriculum:{"type":String,"required":true},
   }],
   update_to: String,
-  created_at: Date,
-  updated_at: Date,
-  deleted_at: Date
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now },
+  deleted_at: { type: Date }
 });
 
 module.exports = mongoose.model('Listing', ListingSchema);

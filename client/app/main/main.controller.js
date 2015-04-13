@@ -5,6 +5,11 @@ angular.module('englishClubApp')
     $scope.awesomeThings = [];
     $scope.showHowWorks = false;
 
+    $scope.clubs = [];
+    $http.get('/api/listings?sort=-clicks&limit=4&approved=1').success(function(data) {
+      $scope.clubs = data;
+    });
+
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
@@ -25,7 +30,9 @@ angular.module('englishClubApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
-  }).animation('.slide', function() {
+  })
+
+  .animation('.slide', function() {
     var NG_HIDE_CLASS = 'ng-hide';
     return {
         beforeAddClass: function(element, className, done) {

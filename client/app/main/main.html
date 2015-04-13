@@ -76,10 +76,15 @@
         <button ng-click="showHowWorks = true" class="btn btn-default" style="opacity:.9;font-weight:bold;color:#555;box-shadow: 0px 0px 10px 1px #000; ">How it works</button>
       </div>
       <br><br>
-      <div class="row" style="margin:0px;">
+      <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <input type="text" style="box-shadow: 0px 0px 10px 1px #000;" class="form-control" placeholder="Enter a location near you" google-places-input>
+          <div class="input-group input-group-lg" style="box-shadow:0px 0px 10px 1px #000;border-radius:5px;">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-search" style="text-shadow:none;"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="Enter a location near you" google-places-input>
+          </div>
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -198,68 +203,42 @@
   </div>
 </div>
 
-<hr>
-
 <!-- TOP CLUBS -->
 <div class="container-fluid top-clubs">
   <h1>
-    <i class="glyphicon glyphicon-book"></i>
+    <i class="glyphicon glyphicon-fire"></i>
     Trending Clubs
     <br>
-    <small>Our most popular clubs around the globe</small>
+    <small>
+      Our most popular clubs around the globe
+    </small>
   </h1>
   <div class="row">
-    <div class="col-md-3">
-      <h2>
-        Timerazovskaya Club
-      </h2>
-      <p>
-        <i class="glyphicon glyphicon-map-marker"></i>
-        Moscow, Russia
-      </p>
-      <hr>
-      <p>
-        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
-      </p>
-    </div>
-    <div class="col-md-3">
-      <h2>
-        Timerazovskaya Club
-      </h2>
-      <p>
-        <i class="glyphicon glyphicon-map-marker"></i>
-        Moscow, Russia
-      </p>
-      <hr>
-      <p>
-        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
-      </p>
-    </div>
-    <div class="col-md-3">
-      <h2>
-        Timerazovskaya Club
-      </h2>
-      <p>
-        <i class="glyphicon glyphicon-map-marker"></i>
-        Moscow, Russia
-      </p>
-      <hr>
-      <p>
-        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
-      </p>
-    </div>
-    <div class="col-md-3">
-      <h2>
-        Timerazovskaya Club
-      </h2>
-      <p>
-        <i class="glyphicon glyphicon-map-marker"></i>
-        Moscow, Russia
-      </p>
-      <hr>
-      <p>
-        Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
-      </p>
+    <div ng-repeat="club in clubs">
+      <a ui-sref='club({country: club.country, city: club.city, club: club.title, lat: club.lat, lng: club.lng})'>
+        <div class="col-md-3" >
+          <h2>
+            {{club.title}}
+          </h2>
+          <p>
+            <i class="glyphicon glyphicon-map-marker"></i>
+            {{club.location}}
+          </p>
+          <hr>
+          <p ng-repeat="class in club.classes" >
+            <i class="glyphicon glyphicon-time"></i>
+            <strong>
+              {{class.day}}s
+            </strong>
+            {{class.start_time}} 
+            - 
+            {{class.end_time}}
+          </p>
+          <p style="text-align:justify;">
+            {{club.description | limitTo : 300 : 0}}
+          </p>
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -284,6 +263,6 @@
     </p>
   </form>
 </div> -->
-
+<br><br><br><br>
 <!-- FOOTER -->
 <div ng-include="'components/footer/footer.html'"></div>

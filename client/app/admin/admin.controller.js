@@ -8,7 +8,7 @@ angular.module('englishClubApp')
 
     $scope.approved=[];
     function getApproved() {
-      $http.get('/api/listings/approved').
+      $http.get('/api/listings?approved=1').
       success(function(data, status, headers, config) {
         $scope.approved = data;
       }).
@@ -19,7 +19,7 @@ angular.module('englishClubApp')
 
     $scope.needsApproval=[];
     function getNeedsApproval() {
-      $http.get('/api/listings/needsApproval').
+      $http.get('/api/listings?approved=0').
       success(function(data, status, headers, config) {
         $scope.needsApproval = data;
       }).

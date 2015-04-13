@@ -51,89 +51,106 @@ User.find({}).remove(function() {
 
 Listing.find({}).remove(function() {
   Listing.create({
-    title: 'test1',
-    subtitle: 'This is a subtitle',
-    description: 'This is a description',
-    location: 'lexington palace street lexington, lexingtonville, USA',
+    title: 'Test 1 English Club',
+    subtitle: 'We can has spell good',
+    description: 'Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant. Wafer marshmallow halvah. Lemon drops pie chocolate bar jelly wafer pastry. Gummies tiramisu candy lemon drops toffee oat cake sweet. Carrot cake cotton candy toffee pie cake. Cake chocolate cake topping marzipan tart chocolate bar gummies. Apple pie sugar plum jujubes ice cream. Macaroon gingerbread ice cream topping gummi bears sweet roll lollipop.',
+    location: 'Stanky stank Blvd 45 N, Moscow, Russia',
     lat: '55.7560725',
     lng: '37.59863310000004',
     city: 'Moscow',
     country: 'Russia',
-    clicks: 11,
+    clicks: 1,
     approved: 1,
     classes: [{
       day: "Wednesday",
       start_time: "6pm",
       end_time: "7pm",
-      curriculum: "This is a curriculum"
+      curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
-    title: 'test2',
-    subtitle: 'This is a subtitle',
-    description: 'This is a description',
-    location: 'lexington palace street lexington, lexingtonville, USA',
+    title: 'Test 2 English Club',
+    subtitle: 'Welcome to the jungle',
+    description: 'Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant. Wafer marshmallow halvah. Lemon drops pie chocolate bar jelly wafer pastry. Gummies tiramisu candy lemon drops toffee oat cake sweet. Carrot cake cotton candy toffee pie cake. Cake chocolate cake topping marzipan tart chocolate bar gummies. Apple pie sugar plum jujubes ice cream. Macaroon gingerbread ice cream topping gummi bears sweet roll lollipop.',
+    location: 'Ivillcrushyou St 85 S, Moscow, Russia',
     lat: '55.7660725',
     lng: '37.57863310000004',
     city: 'Moscow',
     country: 'Russia',
-    clicks: 10,
+    clicks: 1,
     approved: 1,
     classes: [{
       day: "Wednesday",
       start_time: "6pm",
       end_time: "7pm",
-      curriculum: "This is a curriculum"
+      curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
-    title: 'test3',
-    subtitle: 'This is a subtitle',
-    description: 'This is a description',
-    location: 'lexington palace street lexington, lexingtonville, USA',
+    title: 'Test 3 English Club',
+    subtitle: 'The best in the west',
+    description: 'Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant. Wafer marshmallow halvah. Lemon drops pie chocolate bar jelly wafer pastry. Gummies tiramisu candy lemon drops toffee oat cake sweet. Carrot cake cotton candy toffee pie cake. Cake chocolate cake topping marzipan tart chocolate bar gummies. Apple pie sugar plum jujubes ice cream. Macaroon gingerbread ice cream topping gummi bears sweet roll lollipop.',
+    location: 'Baldington Ave 45, Moscow, Russia',
     lat: '55.7460725',
     lng: '37.58863310000004',
     city: 'Moscow',
     country: 'Russia',
-    clicks: 17,
+    clicks: 1,
     approved: 1,
     classes: [{
       day: "Wednesday",
       start_time: "6pm",
       end_time: "7pm",
-      curriculum: "This is a curriculum"
+      curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
-    title: 'Novokuznetskaya',
-    subtitle: 'This is a subtitle',
-    description: 'This is a description',
-    location: 'Pereulok blah blah blah Moscow, Russia',
+    title: 'Test 4 English Club',
+    subtitle: 'We have cookies',
+    description: 'Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant. Wafer marshmallow halvah. Lemon drops pie chocolate bar jelly wafer pastry. Gummies tiramisu candy lemon drops toffee oat cake sweet. Carrot cake cotton candy toffee pie cake. Cake chocolate cake topping marzipan tart chocolate bar gummies. Apple pie sugar plum jujubes ice cream. Macaroon gingerbread ice cream topping gummi bears sweet roll lollipop.',
+    location: 'Cookie Ln 85 N, Moscow, Russia',
+    lat: '55.7460725',
+    lng: '37.58863310000004',
+    city: 'Moscow',
+    country: 'Russia',
+    clicks: 1,
+    approved: 1,
+    classes: [{
+      day: "Wednesday",
+      start_time: "6pm",
+      end_time: "7pm",
+      curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
+    }]
+  },{
+    title: 'Novokuznetskaya English Club',
+    subtitle: '5 Groups and Counting',
+    description: 'Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant. Wafer marshmallow halvah. Lemon drops pie chocolate bar jelly wafer pastry. Gummies tiramisu candy lemon drops toffee oat cake sweet. Carrot cake cotton candy toffee pie cake. Cake chocolate cake topping marzipan tart chocolate bar gummies. Apple pie sugar plum jujubes ice cream. Macaroon gingerbread ice cream topping gummi bears sweet roll lollipop.',
+    location: 'Pereulok blah St 45, Moscow, Russia',
     lat: '55.7360725',
     lng: '37.61863310000004',
     city: 'Moscow',
     country: 'Russia',
-    clicks: 17,
+    clicks: 0,
     approved: 0,
     classes: [{
       day: "Wednesday",
       start_time: "6pm",
       end_time: "7pm",
-      curriculum: "This is a curriculum"
+      curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
-    title: 'Rechnoi',
-    subtitle: 'This is a subtitle',
-    description: 'This is a description',
-    location: 'Pereulok blah blah blah Moscow, Russia',
+    title: 'Rechnoi English Club',
+    subtitle: '3 Groups to Choose From',
+    description: 'Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant. Wafer marshmallow halvah. Lemon drops pie chocolate bar jelly wafer pastry. Gummies tiramisu candy lemon drops toffee oat cake sweet. Carrot cake cotton candy toffee pie cake. Cake chocolate cake topping marzipan tart chocolate bar gummies. Apple pie sugar plum jujubes ice cream. Macaroon gingerbread ice cream topping gummi bears sweet roll lollipop.',
+    location: 'Ugol 86 Ventura Blvd, Moscow, Russia',
     lat: '55.7360725',
     lng: '37.65993310000004',
     city: 'Moscow',
     country: 'Russia',
-    clicks: 17,
+    clicks: 0,
     approved: 0,
     classes: [{
       day: "Wednesday",
       start_time: "6pm",
       end_time: "7pm",
-      curriculum: "This is a curriculum"
+      curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   }, function() {
       console.log('finished populating listings');

@@ -30,7 +30,18 @@ angular.module('englishClubApp')
         title: $scope.clubs[i].title,
       });
 
-      var content = "<h1>"+$scope.clubs[i].title+"</h1>";
+      var content = "<h3>"+$scope.clubs[i].title+"</h3>";
+      content += "<p>"+$scope.clubs[i].subtitle+"</p>";
+      
+      for(var j=0;j<$scope.clubs[i].classes.length;j++) {
+        content += "<p><strong>"+$scope.clubs[i].classes[j].day+"</strong> ";
+        content += $scope.clubs[i].classes[j].start_time+" - ";
+        content += $scope.clubs[i].classes[j].end_time+"</p>";
+      }
+
+      // $scope.clubs[i].classes.forEach(function(class){
+      //   // content += "<p><strong>"+class.day+"</strong></p>";
+      // });
 
       $scope.clubs[i].infowindow = new google.maps.InfoWindow({
           content: content,

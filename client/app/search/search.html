@@ -4,32 +4,35 @@
 	<div class="row" style="position:relative;">
 		
 		<div class="col-md-7" style="padding-left:0px;">
+
 			<div class="col-md-6" ng-repeat="club in clubs" >
-				<div style="background:#fff;padding:10px 15px;margin-bottom:20px;border:1px solid #e9e9e9;min-height:350px;" ng-mouseenter="$parent.toggleBounce(club.mapMarker)" ng-mouseleave="$parent.toggleBounce(club.mapMarker)">
-					<a ui-sref='club({country: "russia", city: "moscow",club:"rechnoi"})'>
-						<h1 style="margin-top:10px;">
-							<!-- <i class="fa fa-group"></i> -->
-							{{club.title}}
-						</h1>
-					</a>
-					<p>
-						<i class="glyphicon glyphicon-map-marker"></i>
-						{{club.location}}
-					</p>
-					<hr>
-					<p ng-repeat="class in club.classes">
-						<i class="glyphicon glyphicon-time"></i>
-						<strong>
-							{{class.day}}s
-						</strong>
-						{{class.start_time}}
-						-
-						{{class.end_time}}
-					</p>
-					<p style="color:#777;text-align:justify;">
-						{{club.description | limitTo : 300 : 0}}
-					</p>
-				</div>
+				
+
+					<div class="searchBox" ng-mouseenter="$parent.toggleBounce(club.mapMarker)" ng-mouseleave="$parent.toggleBounce(club.mapMarker)">
+						<a ui-sref='club({country: club.country, city: club.city, club: club.title, lat: club.lat, lng: club.lng})'>
+							<h1 style="margin-top:10px;">
+								{{club.title}}
+							</h1>
+							<p class="address">
+								<i class="glyphicon glyphicon-map-marker"></i>
+								{{club.location}}
+							</p>
+							<hr>
+							<p class="classes" ng-repeat="class in club.classes">
+								<i class="glyphicon glyphicon-time"></i>
+								<strong>
+									{{class.day}}s
+								</strong>
+								{{class.start_time}}
+								-
+								{{class.end_time}}
+							</p>
+							<p class="description" >
+								{{club.description | limitTo : 300 : 0}}
+							</p>
+						</a>
+					</div>
+					
 			</div>	
 		</div>
 

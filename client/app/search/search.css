@@ -1,3 +1,29 @@
+.searchBox {
+	background:#fff;
+	padding:10px 15px;
+	margin-bottom:20px;
+	border:1px solid #e9e9e9;
+	height:350px;
+	overflow:hidden;
+}
+.searchBox a:hover {
+	text-decoration: none;
+}
+.searchBox h1, .searchBox .classes {
+	color:#777;
+}
+.searchBox:hover h1,.searchBox:hover .classes {
+	color: #333;
+}
+.searchBox .address{
+	color:#999;
+}
+.searchBox .description {
+	color:#999;text-align:justify;
+}
+.searchBox:hover .address,.searchBox:hover .description {
+	color: #555;
+}
 
 
 /*BOOTSTRAP OVERWRITE*/

@@ -25,22 +25,6 @@ exports.index = function(req, res) {
   });
 };
 
-// Get list of approved listings
-exports.approved = function(req, res) {
-  Listing.find({ 'approved': 1 },function (err, listings) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, listings);
-  });
-};
-
-// Get list of listings for approval
-exports.needsApproval = function(req, res) {
-  Listing.find({ 'approved': 0 },function (err, listings) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, listings);
-  });
-};
-
 // Get a single listing
 exports.show = function(req, res) {
   Listing.findById(req.params.id, function (err, listing) {
@@ -52,6 +36,13 @@ exports.show = function(req, res) {
 
 // Creates a new listing in the DB.
 exports.create = function(req, res) {
+  for(var i=0;i<req.body.classes.length;i++) {
+    var st = req.body.classes[i].start_time;
+    req.body.classes[i].start_time_str = setTimeString(st);
+    var et = req.body.classes[i].end_time;
+    req.body.classes[i].end_time_str = setTimeString(et);
+  }
+  console.log(req.body);
   Listing.create(req.body, function(err, listing) {
     if(err) { return handleError(res, err); }
     return res.json(201, listing);
@@ -70,6 +61,14 @@ exports.update = function(req, res) {
     if(!listing) { 
       return res.send(404); 
     }
+
+    for(var i=0;i<req.body.classes.length;i++) {
+      var st = req.body.classes[i].start_time;
+      req.body.classes[i].start_time_str = setTimeString(st);
+      var et = req.body.classes[i].end_time;
+      req.body.classes[i].end_time_str = setTimeString(et);
+    }
+
     var updated = _.extend(listing, req.body);
     updated.save(function (err) {
       if (err) { 
@@ -94,4 +93,14 @@ exports.destroy = function(req, res) {
 
 function handleError(res, err) {
   return res.send(500, err);
+}
+
+function setTimeString(t) {
+  var date = new Date(t);
+  var hours = date.getHours();
+  var ampm = hours >= 12 ? "pm" : "am";
+  hours = hours > 12 ? hours - 12 : hours;
+  var minutes = "0" + date.getMinutes();
+
+  return hours + ':' + minutes.substr(minutes.length-2)+ampm;
 }

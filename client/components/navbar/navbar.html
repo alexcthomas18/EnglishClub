@@ -32,8 +32,11 @@
         </li>
       </ul>
       <form ng-if="!isActive('/')" class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter a location near you" google-places-input>
+        <div class="input-group" >
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-search" style="text-shadow:none;"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="Enter a location near you" google-places-input>
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">

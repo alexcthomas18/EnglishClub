@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: listings', function () {
+describe('Service: Listings', function () {
 
   // load the service's module
   beforeEach(module('englishClubApp'));
 
   // instantiate service
-  var listings;
-  beforeEach(inject(function (_listings_) {
-    listings = _listings_;
+  var Listings;
+  beforeEach(inject(function (_Listings_) {
+    Listings = _Listings_;
   }));
 
   it('should do something', function () {
-    expect(!!listings).toBe(true);
+    expect(!!Listings).toBe(true);
   });
 
 });

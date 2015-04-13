@@ -80,11 +80,15 @@ angular.module('englishClubApp')
 
       if(form.$valid) {
         
-        alert("valid");
+        //alert("valid");
 
         $http.post('/api/listings', $scope.listing).
         success(function(data, status, headers, config) {
           console.log(data);
+          $scope.listing = {};
+          $scope.submitted = false;
+          $scope.success = true;
+          window.scrollTo(0,0);
           // this callback will be called asynchronously
           // when the response is available
         }).

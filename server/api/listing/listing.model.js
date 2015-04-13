@@ -17,8 +17,10 @@ var ListingSchema = new Schema({
   approved: {"type":Number,"default":0},
   classes:[{
     day:{"type":String,"required":true},
-    start_time:{"type":String,"required":true},
-    end_time:{"type":String,"required":true},
+    start_time:{"type":Date,"required":true},
+    start_time_str:{"type":String,"required":true},
+    end_time:{"type":Date,"required":true},
+    end_time_str:{"type":String,"required":true},
     curriculum:{"type":String,"required":true},
   }],
   update_to: String,

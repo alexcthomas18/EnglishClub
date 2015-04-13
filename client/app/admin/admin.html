@@ -3,7 +3,6 @@
 <div class="container" style="padding-top: 50px;">
 
   <h1>
-    <hr>
     <i class="glyphicon glyphicon-book"></i>
     Clubs
   </h1>
@@ -63,7 +62,7 @@
                   <i class="glyphicon glyphicon-time"></i>
                   <strong>{{class.day}}s</strong>
                   <br>
-                  {{$parent.getClubTime(class.start_time)}} - {{$parent.getClubTime(class.end_time)}}
+                  {{class.start_time_str}} - {{class.end_time_str}}
                 </div>
                 <div class="col-md-7" style="padding-right:0px;">
                   <strong>Curriculum</strong>
@@ -131,7 +130,7 @@
                   <i class="glyphicon glyphicon-time"></i>
                   <strong>{{class.day}}s</strong>
                   <br>
-                  {{$parent.getClubTime(class.start_time)}} - {{$parent.getClubTime(class.end_time)}}
+                  {{class.start_time_str}} - {{class.end_time_str}}
                 </div>
                 <div class="col-md-7" style="padding-right:0px;">
                   <strong>Curriculum</strong>

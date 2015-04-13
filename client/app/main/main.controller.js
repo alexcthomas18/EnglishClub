@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('englishClubApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
+  .controller('MainCtrl', function ($scope, $http, socket, Listings) {
     $scope.awesomeThings = [];
     $scope.showHowWorks = false;
+
+    // console.log(Listings.topFour());
 
     $scope.clubs = [];
     $http.get('/api/listings?sort=-clicks&limit=4&approved=1').success(function(data) {

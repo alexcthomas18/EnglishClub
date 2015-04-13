@@ -124,6 +124,7 @@ angular.module('englishClubApp')
       if(form.$valid) {
         console.log("before update:");
         console.log($scope.listing);
+
         $http.put('/api/listings/'+$scope.listing._id, $scope.listing).
         success(function(data, status, headers, config) {
           console.log(data);
@@ -141,47 +142,6 @@ angular.module('englishClubApp')
     $scope.cancelClubEdit = function() {
       $scope.modalInstance.close();
     }
-
-    // //GOOGLE LOCATIONS
-    // function initialize() {
-    //   alert(1)
-    //     var options = {
-    //         types: [],
-    //         componentRestrictions: {}
-    //     };
-    //     $scope.gPlace = new google.maps.places.Autocomplete(document.getElementById("googleGetLocation"), options);
-    //     google.maps.event.addListener($scope.gPlace, 'place_changed', function() {
-    //       var place = $scope.gPlace.getPlace();
-    //       if (!place.geometry || !place.address_components) {
-    //         return;
-    //       }
-    //       $scope.listing.location = place.formatted_address;
-    //       $scope.listing.lat = place.geometry.location.lat();
-    //       $scope.listing.lng = place.geometry.location.lng();
-    //       for(var i = 0; i < place.address_components.length; i += 1) {
-                  
-    //          var addressObj = place.address_components[i];
-
-    //          for(var j = 0; j < addressObj.types.length; j += 1) {
-
-    //           //COUNTRY
-    //          if (addressObj.types[j] === 'country') {
-    //             $scope.listing.country = encodeURIComponent(addressObj.long_name.toLowerCase().trim());
-    //             console.log(addressObj.types[j]); // confirm that this is 'country'
-    //             console.log($scope.listing.country); // confirm that this is the country name
-    //          }
-
-    //           //CITY
-    //           if (addressObj.types[j] === 'locality') {
-    //             $scope.listing.city = encodeURIComponent(addressObj.long_name.toLowerCase().trim());
-    //             console.log(addressObj.types[j]); // confirm that this is 'country'
-    //             console.log($scope.listing.city); // confirm that this is the country name
-    //          }
-    //        }
-    //      }
-    //     });
-    // }
-    // google.maps.event.addDomListener(window, "load", initialize);
 
     //TIME PICKER STUFF
     $scope.addTimeSlot = function() {
@@ -209,5 +169,3 @@ angular.module('englishClubApp')
     };
 
 });
-
-

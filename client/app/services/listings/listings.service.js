@@ -1,31 +1,44 @@
 'use strict';
 
 angular.module('englishClubApp')
-  .service('listings', function () {
+  .service('Listings', function ($http,$q) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    var newListings = {};
-    // return {
-    // 	approved: function() {
+  	var listings = [];
+    var unListings = [];
+    var topFour = [];
 
-    // 	},
-    // 	needApproval: function() {
-    // 		var cb = callback || angular.noop;
-	   //      var deferred = $q.defer();
+    return {
+    	listingsSet: function() {
+    		return this.listings > 0;
+    	},
+    	unListingsSet: function() {
+    		return this.unListings > 0;
+    	},
+    	getListings: function() {
 
-	   //      $http.get('/api/listings').
-	   //      success(function(data) {
-	          
-	   //        newListings = data;
-	   //        deferred.resolve(data);
-	   //        return cb();
-	   //      }).
-	   //      error(function(err) {
-	   //        this.logout();
-	   //        deferred.reject(err);
-	   //        return cb(err);
-	   //      }.bind(this));
+    	},
+    	getUnListings: function() {
 
-	   //      return deferred.promise;
-    // 	}
-    // }
+    	},
+    	getTopFour: function(callback) {
+    		var cb = callback || angular.noop;
+	        var deferred = $q.defer();
+
+	        $http.get('/api/listings?sort=-clicks&limit=4&approved=1').
+	        success(function(data) {
+	        	this.topFour = data;
+		        deferred.resolve(this.topFour);
+		        return cb();
+	        }).
+	        error(function(err) {
+	          deferred.reject(err);
+	          return cb(err);
+	        }.bind(this));
+
+	        return deferred.promise;
+    	},
+    	topFour: function() {
+    		return this.topFour;
+    	}
+    }
   });

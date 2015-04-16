@@ -9,7 +9,7 @@
 				
 
 					<div class="searchBox" ng-mouseenter="$parent.toggleBounce(club.mapMarker)" ng-mouseleave="$parent.toggleBounce(club.mapMarker)">
-						<a ui-sref='club({country: club.country, city: club.city, club: club.title, lat: club.lat, lng: club.lng})'>
+						<a ui-sref='club({country: club.country, city: club.city, club: club.title, lat: club.lat, lng: club.lng, id: club._id})'>
 							<h1 style="margin-top:10px;">
 								{{club.title}}
 							</h1>

@@ -9,12 +9,24 @@ exports.index = function(req, res) {
   var listings = Listing.find({});
   
   //REQ QUERY
+  if(req.query.country) {
+    listings.where('country').equals(req.query.country);
+  }
+  if(req.query.city) {
+    listings.where('city').equals(req.query.city);
+  }
+  if(req.query.lat) {
+    listings.where('lat').equals(req.query.lat);
+  }
+  if(req.query.lng) {
+    listings.where('lng').equals(req.query.lng);
+  }
   if(req.query.approved) {
     listings.where('approved').equals(req.query.approved);
-  }
+  } 
   if(req.query.limit) {
     listings.limit(req.query.limit);
-  }
+  } 
   if(req.query.sort) {
     listings.sort(req.query.sort);
   }

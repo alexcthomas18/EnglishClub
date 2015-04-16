@@ -1,35 +1,19 @@
 'use strict';
 
 angular.module('englishClubApp')
-  .controller('ClubCtrl', function ($scope,$stateParams) {
-  	$scope.stateParams = $stateParams;
-    $scope.message = 'Hello';
+  .controller('ClubCtrl', function ($scope,$stateParams,$http) {
+  	$scope.listing = {};
+    
 
-    $scope.persons = [
-    	{
-    		name:"Alex",
-    	},
-    	{
-    		name:"Paul"
-    	}
-    ]
 
-    $scope.listing = {
-        title:"title",
-        subtitle:"subtitle",
-        classes: [
-            {
-                starttime:"sesh1"
-            },
-            {
-                starttime:"sesh1"
-            },
+    var url = '/api/listings?city='+$stateParams.city;
+    url += '&country='+$stateParams.country;
+    url += '&lat='+$stateParams.lat;
+    url += '&lng='+$stateParams.lng;
+    url += '&approved=1&limit=1';
 
-        ]
-      }
-
-      $scope.addSesh = function(){
-      	$scope.listing.classes.push({starttime:'Im New!'})
-      }
+    $http.get(url).success(function(data) {
+      $scope.listing = data[0];
+    });
 
   });

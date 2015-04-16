@@ -6,29 +6,65 @@
 
   </header>
 </div>
-<div class="container" >
-<h1>
-	<i class="glyphicon glyphicon-map-marker"></i>
-	Club Title Goes Here
-	<br>
-	<small>
-		Subtitle goes here
-	</small>
-</h1>
-<p>
-	The Address Goes Here
-</p>
+<div class="container" style="height:180px">
+	<div class="row" >
+		<div class="col-md-5" style="padding-left:0px;">
+			<h1>
+				<i class="glyphicon glyphicon-map-marker"></i>
+				{{listing.title}}
+				<br>
+				<small>
+					{{listing.subtitle}}
+				</small>
+			</h1>
+			<p>
+				{{listing.location}}
+			</p>
+		</div>
+		<div class="col-md-7" style="padding-right:0px;position:relative;">
+			<div class="col-md-5 pull-right" ng-repeat="class in listing.classes" style="position:absolute:top:0px;background:rgba(255,255,255,.8);border:1px solid #e9e9e9;margin-top:-30px;">
+				<h3 style="text-align:center;">
+					<i class="glyphicon glyphicon-time"></i>
+					<strong>
+						{{class.day}}
+					</strong>
+				</h3>
+				<h4 style="text-align:center;">
+					{{class.start_time_str}}
+					-
+					{{class.end_time_str}}
+				</h4>
+				<hr>
+				<h4>Curriculum</h4>
+				<p style="text-align:justify;">
+					{{class.curriculum}}
+				</p>
+			</div>
+		</div>
+	</div>	
 </div>
 <div style="background:#f9f9f9;border-top:1px solid #e9e9e9;">
 	<div class="container" style="padding:50px 0px 50px 0px">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6" style="border-right:1px solid #e9e9e9;">
+				<h2>Description</h2>
+				<hr>
 				<p>
-					Fruitcake lemon drops croissant sweet. Dessert jelly beans chocolate croissant wafer croissant. Chocolate bar brownie cotton candy macaroon jelly-o. Dessert jelly beans gummies marshmallow powder sweet. Pie candy canes fruitcake apple pie donut muffin halvah gummi bears. Tiramisu gingerbread fruitcake pie carrot cake marzipan muffin croissant. Candy biscuit chocolate cake sugar plum cotton candy candy canes sweet cheesecake. Lollipop chocolate cake toffee. Croissant macaroon dragée icing brownie. Macaroon halvah macaroon.
+					{{listing.description}}
 				</p>
+			</div>
+			<div class="col-md-6 more-info">
+				<h2 style="color:#555;">Our Discussion Leaders</h2>
+				<hr>
+				<div class="about-teachers"></div>
 			</div>
 		</div>
 	</div>
+	<!-- <div style="position:relative;">
+		<div style="height:325px;width:100%;" lat="{{listing.lat}}" lng="{{listing.lng}}" google-map-display></div>
+		<div style="position:absolute:top:0px;left:0px;width:100%;height:325px;"></div>
+	</div> -->
+	
 </div>
 
 <!-- FOOTER -->

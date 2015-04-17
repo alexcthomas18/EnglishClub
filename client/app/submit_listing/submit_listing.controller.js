@@ -2,29 +2,30 @@
 
 angular.module('englishClubApp')
   .controller('SubmitListingCtrl', function ($scope,$stateParams,$http) {
-    
+    /* jshint undef: true, unused: false, camelcase: false */
+    /*global google */
     $scope.message = 'is this wrking';
     $scope.stateParams = $stateParams;
     $scope.listing = {
-    	title:"",
-    	subtitle: "",
-      location: "",
-    	description: "",
+    	title: '',
+    	subtitle: '',
+      location: '',
+    	description: '',
     	classes: [
         {
-      		day:"",
-      		start_time:"",
-      		end_time: "",
-      		curriculum: ""
+      		day: '',
+      		startTime: '',
+      		endTime: '',
+      		curriculum: ''
       	}
       ]
-    }
+    };
 
     var options = {
         types: [],
         componentRestrictions: {}
     };
-    $scope.gPlace = new google.maps.places.Autocomplete(document.getElementById("googleGetLocation"), options);
+    $scope.gPlace = new google.maps.places.Autocomplete(document.getElementById('googleGetLocation'), options);
     google.maps.event.addListener($scope.gPlace, 'place_changed', function() {
       var place = $scope.gPlace.getPlace();
       if (!place.geometry || !place.address_components) {
@@ -58,18 +59,18 @@ angular.module('englishClubApp')
 
 
     $scope.addTimeSlot = function() {
-      console.log("addSlot");
+      console.log('addSlot');
       $scope.listing.classes.push({
-          day:"",
-          start_time:"",
-          end_time: "",
-          curriculum: ""
+          day: '',
+          startTime: '',
+          endTime: '',
+          curriculum: ''
         });
     };
 
     $scope.removeTimeSlot = function(index) {
       $scope.listing.classes.splice(index,1);
-    }
+    };
 
 
     $scope.submitListing = function(form) {
@@ -98,7 +99,7 @@ angular.module('englishClubApp')
           // or server returns response with an error status.
         });
       }
-    }
+    };
 
     $scope.mytime = new Date();
 

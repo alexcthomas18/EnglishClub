@@ -2,7 +2,8 @@
 
 angular.module('englishClubApp')
   .directive('googlePlacesInput', function ($state) {
-  	
+    /*jshint camelcase: false */
+  	/*global google */
     return {
       template: '<div></div>',
       restrict: 'EA',
@@ -15,12 +16,11 @@ angular.module('englishClubApp')
         scope.gPlace = new google.maps.places.Autocomplete(element[0], options);
         
         google.maps.event.addListener(scope.gPlace, 'place_changed', function() {
-            //alert(element.val());
             var place = scope.gPlace.getPlace();
             if (!place.geometry || !place.address_components) {
     		      return;
     		    }
-            var location = location = place.formatted_address;
+            var location = place.formatted_address;
             var lat = place.geometry.location.lat();
             var lng = place.geometry.location.lng();
             
@@ -49,7 +49,7 @@ angular.module('englishClubApp')
 			  }
 			}
 
-      if(attrs.redirect === "false") {
+      if(attrs.redirect === 'false') {
         scope.getNewLocation(location,lat,lng,country,city);
       } else {
         $state.go('search',{country:country,city:city,lat:lat,lng:lng});

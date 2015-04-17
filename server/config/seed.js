@@ -63,17 +63,17 @@ Listing.find({}).remove(function() {
     approved: 1,
     classes: [{
       day: "Tuesday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     },{
       day: "Thursday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
@@ -89,10 +89,10 @@ Listing.find({}).remove(function() {
     approved: 1,
     classes: [{
       day: "Wednesday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
@@ -108,10 +108,10 @@ Listing.find({}).remove(function() {
     approved: 1,
     classes: [{
       day: "Wednesday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
@@ -127,17 +127,17 @@ Listing.find({}).remove(function() {
     approved: 1,
     classes: [{
       day: "Wednesday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     },{
       day: "Saturday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
@@ -153,10 +153,10 @@ Listing.find({}).remove(function() {
     approved: 0,
     classes: [{
       day: "Wednesday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   },{
@@ -172,17 +172,17 @@ Listing.find({}).remove(function() {
     approved: 0,
     classes: [{
       day: "Wednesday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     },{
       day: "Saturday",
-      start_time: "2015-04-13T00:00:37.493Z",
-      start_time_str: "6:00pm",
-      end_time: "2015-04-13T01:00:37.501Z",
-      end_time_str: "7:00pm",
+      startTime: "2015-04-13T00:00:37.493Z",
+      startTimeStr: "6:00pm",
+      endTime: "2015-04-13T01:00:37.501Z",
+      endTimeStr: "7:00pm",
       curriculum: "Halvah toffee jelly beans croissant. Chocolate cake sweet ice cream. Tart liquorice chocolate cake jelly beans tart. Sweet pastry dessert carrot cake macaroon lollipop croissant croissant."
     }]
   }, function() {

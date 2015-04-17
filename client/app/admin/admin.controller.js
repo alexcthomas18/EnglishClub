@@ -2,6 +2,7 @@
 
 angular.module('englishClubApp')
   .controller('AdminCtrl', function ($scope, $http, $modal, Auth, User) {
+    /* jshint undef: true, unused: false */
 
     //USED FOR UPDATES
     $scope.listing = {};
@@ -48,18 +49,18 @@ angular.module('englishClubApp')
 
       var date = new Date(t);
       var hours = date.getHours();
-      var ampm = hours >= 12 ? "pm" : "am";
+      var ampm = hours >= 12 ? 'pm' : 'am';
       hours = hours > 12 ? hours - 12 : hours;
-      var minutes = "0" + date.getMinutes();
+      var minutes = '0' + date.getMinutes();
 
       return hours + ':' + minutes.substr(minutes.length-2)+ampm;
-    }
+    };
 
     //APPROVE CLUB
     $scope.approveClub = function(club) {
       club.approved = 1;
       $scope.updateClub(club);
-    }
+    };
 
     //UPDATE CLUB
     $scope.updateClub = function(club) {
@@ -73,7 +74,7 @@ angular.module('englishClubApp')
       }).
       error(function(data, status, headers, config) {
       });
-    }
+    };
 
     //DELETE CLUB
     $scope.deleteClub = function(club) {
@@ -87,7 +88,7 @@ angular.module('englishClubApp')
       }).
       error(function(data, status, headers, config) {
       });
-    }
+    };
 
     //LOAD/POPULATE EDIT BOX
     $scope.loadUpdateBox = function(club) {
@@ -97,16 +98,14 @@ angular.module('englishClubApp')
         scope: $scope
       });
       $scope.modalInstance.result.then(function () {
-        // alert('Modal success at:' + new Date());
         $scope.listing = {};
         $scope.submitted = false;
       }, function () {
-        // alert('Modal dismissed at: ' + new Date());
         $scope.listing = {};
         $scope.submitted = false;
       });
       $scope.listing = angular.copy(club);
-    }
+    };
 
 
     $scope.getNewLocation = function(loc,lat,lng,cntry,city) {
@@ -115,14 +114,14 @@ angular.module('englishClubApp')
       $scope.listing.lng = lng;
       $scope.listing.country = cntry;
       $scope.listing.city = city;
-    }
+    };
 
     //UPDATE LISTING FROM UPDATE BOX(DUPLICATE)
     $scope.saveClubEdit = function(form) {
       $scope.submitted = true;
 
       if(form.$valid) {
-        console.log("before update:");
+        console.log('before update:');
         console.log($scope.listing);
 
         $http.put('/api/listings/'+$scope.listing._id, $scope.listing).
@@ -133,7 +132,6 @@ angular.module('englishClubApp')
           getNeedsApproval();
         }).
         error(function(data, status, headers, config) {
-          alert("error");
           console.log(data);
         });
       }
@@ -141,21 +139,21 @@ angular.module('englishClubApp')
     };
     $scope.cancelClubEdit = function() {
       $scope.modalInstance.close();
-    }
+    };
 
     //TIME PICKER STUFF
     $scope.addTimeSlot = function() {
-      console.log("addSlot");
+      console.log('addSlot');
       $scope.listing.classes.push({
-          day:"",
-          start_time:"",
-          end_time: "",
-          curriculum: ""
+          day:'',
+          startTime:'',
+          endTime: '',
+          curriculum: ''
         });
     };
     $scope.removeTimeSlot = function(index) {
       $scope.listing.classes.splice(index,1);
-    }
+    };
     $scope.mytime = new Date();
     $scope.hstep = 1;
     $scope.mstep = 1;

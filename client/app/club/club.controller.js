@@ -3,8 +3,6 @@
 angular.module('englishClubApp')
   .controller('ClubCtrl', function ($scope,$stateParams,$http) {
   	$scope.listing = {};
-    
-
 
     var url = '/api/listings?city='+$stateParams.city;
     url += '&country='+$stateParams.country;

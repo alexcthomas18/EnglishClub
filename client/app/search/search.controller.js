@@ -2,6 +2,8 @@
 
 angular.module('englishClubApp')
 .controller('SearchCtrl', function ($scope,$stateParams,$http) {
+  /* jshint undef: true, unused: false */
+  /*global google */
   $scope.message = 'Hello';
   $scope.stateParams = $stateParams;
   $scope.examples = [1,2,3,4,5,6,7,8];
@@ -21,7 +23,7 @@ angular.module('englishClubApp')
       mapTypeId:google.maps.MapTypeId.ROADMAP
     };
     
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
 
     for(var i=0;i<$scope.clubs.length;i++) {
       $scope.clubs[i].mapMarker = new google.maps.Marker({
@@ -30,13 +32,13 @@ angular.module('englishClubApp')
         title: $scope.clubs[i].title,
       });
 
-      var content = "<h3>"+$scope.clubs[i].title+"</h3>";
-      content += "<p>"+$scope.clubs[i].subtitle+"</p>";
+      var content = '<h3>'+$scope.clubs[i].title+'</h3>';
+      content += '<p>'+$scope.clubs[i].subtitle+'</p>';
       
       for(var j=0;j<$scope.clubs[i].classes.length;j++) {
-        content += "<p><strong>"+$scope.clubs[i].classes[j].day+"s</strong> ";
-        content += $scope.clubs[i].classes[j].start_time_str+" - ";
-        content += $scope.clubs[i].classes[j].end_time_str+"</p>";
+        content += '<p><strong>'+$scope.clubs[i].classes[j].day+'s</strong> ';
+        content += $scope.clubs[i].classes[j].startTimeStr+' - ';
+        content += $scope.clubs[i].classes[j].endTimeStr+'</p>';
       }
 
       // $scope.clubs[i].classes.forEach(function(class){
@@ -47,20 +49,21 @@ angular.module('englishClubApp')
           content: content,
       });
 
-      google.maps.event.addListener($scope.clubs[i].mapMarker, 'click', (function(marker, infowindow) {
-        return function() {
-          infowindow.open(map, marker);
-        }
-      })($scope.clubs[i].mapMarker, $scope.clubs[i].infowindow));
+      google.maps.event.addListener($scope.clubs[i].mapMarker, 'click', infoWindowClick($scope.clubs[i].mapMarker, $scope.clubs[i].infowindow, map));
     }
   }
 
-  $scope.toggleBounce = function(marker) {
-    if (marker.getAnimation() != null) {
-      marker.setAnimation(null);
-    } else {
-      marker.setAnimation(google.maps.Animation.BOUNCE);
-    }
+  function infoWindowClick(marker,infowindow, map) {
+    return function() {
+      infowindow.open(map, marker);
+    };
   }
+
+  $scope.startBounce = function(marker) {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  };
+  $scope.stopBounce = function(marker) {
+    marker.setAnimation(null);
+  };
 
 });

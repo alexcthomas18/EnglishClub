@@ -49,10 +49,10 @@ exports.show = function(req, res) {
 // Creates a new listing in the DB.
 exports.create = function(req, res) {
   for(var i=0;i<req.body.classes.length;i++) {
-    var st = req.body.classes[i].start_time;
-    req.body.classes[i].start_time_str = setTimeString(st);
-    var et = req.body.classes[i].end_time;
-    req.body.classes[i].end_time_str = setTimeString(et);
+    var st = req.body.classes[i].startTime;
+    req.body.classes[i].startTimeStr = setTimeString(st);
+    var et = req.body.classes[i].endTime;
+    req.body.classes[i].endTimeStr = setTimeString(et);
   }
   console.log(req.body);
   Listing.create(req.body, function(err, listing) {
@@ -75,10 +75,10 @@ exports.update = function(req, res) {
     }
 
     for(var i=0;i<req.body.classes.length;i++) {
-      var st = req.body.classes[i].start_time;
-      req.body.classes[i].start_time_str = setTimeString(st);
-      var et = req.body.classes[i].end_time;
-      req.body.classes[i].end_time_str = setTimeString(et);
+      var st = req.body.classes[i].startTime;
+      req.body.classes[i].startTimeStr = setTimeString(st);
+      var et = req.body.classes[i].endTime;
+      req.body.classes[i].endTimeStr = setTimeString(et);
     }
 
     var updated = _.extend(listing, req.body);

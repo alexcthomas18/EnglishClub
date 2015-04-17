@@ -4,7 +4,7 @@
 	<div class="row" style="position:relative;">
 		
 		<div class="col-md-7" style="padding-left:0px;">
-			<div class="col-md-12" style="text-align:center;">
+			<div ng-if="!clubs.length" class="col-md-12" style="text-align:center;">
 				<h1>
 					
 					We're Sorry...
@@ -31,7 +31,7 @@
 			<div class="col-md-6" ng-repeat="club in clubs" >
 				
 
-					<div class="searchBox" ng-mouseenter="$parent.toggleBounce(club.mapMarker)" ng-mouseleave="$parent.toggleBounce(club.mapMarker)">
+					<div class="searchBox" ng-mouseenter="$parent.startBounce(club.mapMarker)" ng-mouseleave="$parent.stopBounce(club.mapMarker)">
 						<a ui-sref='club({country: club.country, city: club.city, club: club.title, lat: club.lat, lng: club.lng, id: club._id})'>
 							<h1 style="margin-top:10px;">
 								{{club.title}}
@@ -46,9 +46,9 @@
 								<strong>
 									{{class.day}}s
 								</strong>
-								{{class.start_time_str}}
+								{{class.startTimeStr}}
 								-
-								{{class.end_time_str}}
+								{{class.endTimeStr}}
 							</p>
 							<p class="description" >
 								{{club.description | limitTo : 300 : 0}}

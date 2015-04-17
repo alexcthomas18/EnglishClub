@@ -9,10 +9,10 @@ angular.module('englishClubApp')
 
     return {
     	listingsSet: function() {
-    		return this.listings > 0;
+    		return listings > 0;
     	},
     	unListingsSet: function() {
-    		return this.unListings > 0;
+    		return unListings > 0;
     	},
     	getListings: function() {
 
@@ -26,7 +26,7 @@ angular.module('englishClubApp')
 
 	        $http.get('/api/listings?sort=-clicks&limit=4&approved=1').
 	        success(function(data) {
-	        	this.topFour = data;
+	        	topFour = data;
 		        deferred.resolve(this.topFour);
 		        return cb();
 	        }).
@@ -38,7 +38,7 @@ angular.module('englishClubApp')
 	        return deferred.promise;
     	},
     	topFour: function() {
-    		return this.topFour;
+    		return topFour;
     	}
-    }
+    };
   });

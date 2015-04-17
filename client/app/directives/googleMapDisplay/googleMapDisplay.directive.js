@@ -2,6 +2,8 @@
 
 angular.module('englishClubApp')
   .directive('googleMapDisplay', function () {
+  	/* jshint undef: true, unused: false */
+  	/*global google */
     return {
       template: '<div></div>',
       restrict: 'EA',

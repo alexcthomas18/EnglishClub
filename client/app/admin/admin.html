@@ -62,7 +62,7 @@
                   <i class="glyphicon glyphicon-time"></i>
                   <strong>{{class.day}}s</strong>
                   <br>
-                  {{class.start_time_str}} - {{class.end_time_str}}
+                  {{class.startTimeStr}} - {{class.endTimeStr}}
                 </div>
                 <div class="col-md-7" style="padding-right:0px;">
                   <strong>Curriculum</strong>
@@ -130,7 +130,7 @@
                   <i class="glyphicon glyphicon-time"></i>
                   <strong>{{class.day}}s</strong>
                   <br>
-                  {{class.start_time_str}} - {{class.end_time_str}}
+                  {{class.startTimeStr}} - {{class.endTimeStr}}
                 </div>
                 <div class="col-md-7" style="padding-right:0px;">
                   <strong>Curriculum</strong>
@@ -263,18 +263,18 @@
           </select>
         </div>
         <!-- starting time div -->
-        <div class="form-group" ng-class="{ 'has-success': form.start_time{{$index}}.$valid && submitted,'has-error': form.start_time{{$index}}.$invalid && submitted }">
+        <div class="form-group" ng-class="{ 'has-success': form.startTime{{$index}}.$valid && submitted,'has-error': form.startTime{{$index}}.$invalid && submitted }">
           
           <label class="control-label"> Start Time
             </label>
-          <timepicker name="start_time{{$index}}" ng-model="class.start_time" ng-change="changed(  )" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
+          <timepicker name="startTime{{$index}}" ng-model="class.startTime" ng-change="changed(  )" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
           
         </div>
         <!-- ending time div -->
-        <div class="form-group" ng-class="{ 'has-success': form.end_time{{$index}}.$valid && submitted,'has-error': form.end_time{{$index}}.$invalid && submitted }">
+        <div class="form-group" ng-class="{ 'has-success': form.endTime{{$index}}.$valid && submitted,'has-error': form.endTime{{$index}}.$invalid && submitted }">
             <label class="control-label"> End Time
             </label>
-          <timepicker name="end_time{{$index}}" ng-model="class.end_time" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
+          <timepicker name="endTime{{$index}}" ng-model="class.endTime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" required></timepicker>
         </div>
         <div class="form-group" ng-class="{ 'has-success': form.curriculum{{$index}}.$valid && submitted,'has-error': form.curriculum{{$index}}.$invalid && submitted }">
           <label class="control-label">
